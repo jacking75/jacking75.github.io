@@ -2,6 +2,7 @@
 layout: post
 title: introselect 알고리즘
 published: false
+date: 2017-12-20
 categories: [Algorithm]
 tags: c++ c# introselect
 ---
