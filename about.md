@@ -6,7 +6,7 @@ permalink: /about/
 
 **게임 프로그래머**입니다. <br>
 2003년부터 온라인 게임의 서버(PC or Mobile)를 개발하고 있습니다. <br>
-그러나 잠시(2016~2017년) NHN Next에서 'C++'와 '게임 서버 개발' 강의를 하고 있습니다. <br>
+그러나 현재는(2016~2017년) NHN Next에서 'C++'와 '게임 서버 개발' 강의를 하고 있습니다. <br>
 
 <br>
 **C++, C#, Golang, Node.js, Elixir**를 좋아합니다.
@@ -20,4 +20,4 @@ permalink: /about/
 
 <br>
 <br>
-2016년 12월 15일 이전까지는 http://jacking.tistory.com 블로그를 운영했습니다.
+2016년 12월 15일 이전까지는 [티스토리 블로그 jacking](http://jacking.tistory.com) 블로그를 운영했습니다.
