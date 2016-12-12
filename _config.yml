@@ -3,13 +3,13 @@
 #
 
 # Name of your site (displayed in the header)
-name: 한량넷
+name: jacking75
 
 # Short bio or description (displayed in the header)
-description: 한량처럼 살고 싶은 사람의 조각들
+description: 강의 및 게임 서버 개발 컨설팅 의뢰 받습니다<br> online game server programmer <br>
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: /images/avatar.png
+avatar: http://i64.tinypic.com/2ip8io.png
 
 #
 # Flags below are optional
@@ -20,26 +20,26 @@ timezone: Asia/Seoul
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble: 
-  email: charmjf@gmail.com
+  email: jacking75@gmail.com
   facebook: 
   flickr: 
-  github: Halryang
+  github: jacking75
   instagram: 
-  linkedin: 
+  linkedin: 흥배-최-aa024344
   pinterest: 
-  rss: https://dl.dropboxusercontent.com/u/18183807/RSS-icon-40.png # just type anything here for a working RSS icon, make sure you set the "url" above!
-  twitter: charmjf
+  rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
+  twitter: jacking75
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
 
 # Your disqus shortname, entering this will enable commenting on posts
 disqus: 
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics: UA-57045876-1
+google_analytics: 
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url: http://www.halryang.net
+url: https://jacking75.github.io
 
 # If you're hosting your site at a Project repository on GitHub pages 
 # (http://yourusername.github.io/repository-name)
