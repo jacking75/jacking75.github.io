@@ -1,8 +1,7 @@
 ---
 layout: post
 title: 클래스 멤버 함수 포인터 배열 사용하기
-published: false
-date: 2017-12-12
+published: true
 categories: [C++]
 tags: c++ function_pointer
 ---
