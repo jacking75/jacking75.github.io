@@ -57,8 +57,8 @@ highlighter: rouge
 permalink: /:title/
 
 kramdown:
-    input: GFM
-    hard_wrap: false
+  input: GFM
+  hard_wrap: false
     
 # The release of Jekyll Now that you're using
 version: v3.0.2
