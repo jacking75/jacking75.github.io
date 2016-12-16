@@ -36,7 +36,7 @@ bool IsTest(int i) { return (this->*m_pFunc[i])(1, false); }
   
 아래는 예제 코드이다.
 
-```
+```c
 #include <iostream>
 
 class TEST
