@@ -9,10 +9,10 @@ tags: c++ function_pointer
 (사실 최신 C++에서는 std::function을 사용하면 되기 때문에 이걸 사용하지 않아도 된다)
 
 **선언**  
-```
+~~~ c++
 bool(TEST::*m_pFunc[4])(const int, bool);
-```
-
+~~~
+  
 **멤버 함수 연결**  
 ```
 TEST()
