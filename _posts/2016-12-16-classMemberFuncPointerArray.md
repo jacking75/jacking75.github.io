@@ -68,6 +68,7 @@ int main()
 	return 0;
 }
 ```
-  
-  
+
+<br>  
+<br>  
 [예제 코드](../exampe_codes/classMemberFuncPointerArray.zip)  
