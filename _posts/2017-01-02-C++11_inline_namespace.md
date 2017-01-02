@@ -152,33 +152,33 @@ int main()
 - 인라인 이름 공간을 기본 버전으로 하고, 오래된 API를 원래의 이름 공간에 그대로 남겨 둘 수 있다.  
 기본 버전을 전환 할 때 기본 버전에 이름 공간을 인라인 이름 공간로 변경하고 기본 버전 이외의 이름 공간를 비 인라인 이름 공간로 변경한다.  
 따라서 바이너리 호환성을 유지하면서 버전 관리를 쉽게 할 수 있다.
+  
+```
+#include <iostream>
 
-	```
-	#include <iostream>
-
-	namespace my_namespace {
-	  namespace v1 {
-		void f()
-		{
-		  std::cout << "v1" << std::endl;
-		}
-	  }
-
-	  inline namespace v2 {
-		void f()
-		{
-		  std::cout << "v2" << std::endl;
-		}
-	  }
-	}
-
-	int main()
+namespace my_namespace {
+  namespace v1 {
+	void f()
 	{
-	  my_namespace::v1::f(); // 오래된 버전의 API를 호출.  v1 출력
-	  my_namespace::v2::f(); // 버전을 명시적으로 지정하여 API를 호출.  v2 출력
-	  my_namespace::f();     // 기본 버전의 API를 호출. v2 출력
+	  std::cout << "v1" << std::endl;
 	}
-	```
+  }
+
+  inline namespace v2 {
+	void f()
+	{
+	  std::cout << "v2" << std::endl;
+	}
+  }
+}
+
+int main()
+{
+  my_namespace::v1::f(); // 오래된 버전의 API를 호출.  v1 출력
+  my_namespace::v2::f(); // 버전을 명시적으로 지정하여 API를 호출.  v2 출력
+  my_namespace::f();     // 기본 버전의 API를 호출. v2 출력
+}
+```
 
 
 <br>
