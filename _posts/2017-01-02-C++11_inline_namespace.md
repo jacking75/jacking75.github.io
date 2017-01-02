@@ -34,112 +34,113 @@ int main()
 ### 문법
 
 - 이름 공간의 inline 지정은 이름 있는 이름 공간과 이름 없는 이름 공간 양쪽에서 사용할 수 있다.
-- inline 지정된 이름 공간을 "인라인 이름 공간(inline namespace)"이라고 부른다.
-
-	```
-	inline namespace my_namespace {}
-	inline namespace {}
-	```
+- inline 지정된 이름 공간을 "인라인 이름 공간(inline namespace)"이라고 부른다.  
+  
+```
+inline namespace my_namespace {}
+inline namespace {}
+```  
+  
 - 인라인 이름 공간의 멤버는(이름 공간 안에 정의한 것) 이것의 외부 이름 공간의 구성원으로 사용할 수 있다.
 - 인라인 이름 공간과 외부 이름 공간은 인수 종속의 이름 검색에서 검색되는 "관련 있는 이름 공간(associated namespace)" 이 된다
 
-	```
-	#include <iostream>
+```
+#include <iostream>
 
-	namespace ns1 {
-	  class X {};
+namespace ns1 {
+  class X {};
 
-	  inline namespace ns2 {
-		class Y {};
+  inline namespace ns2 {
+	class Y {};
 
-		void f(X)
-		{
-		  std::cout << "call f()" << std::endl;
-		}
-	  }
-
-	  void g(Y)
-	  {
-		std::cout << "call g()" << std::endl;
-	  }
-	}
-
-	int main()
+	void f(X)
 	{
-	  f(ns1::X());      // 「call f()」출력
-	  g(ns1::Y());      // 「call g()」출력
-	  g(ns1::ns2::Y()); // 「call g()」출력
+	  std::cout << "call f()" << std::endl;
 	}
-	```
+  }
+
+  void g(Y)
+  {
+	std::cout << "call g()" << std::endl;
+  }
+}
+
+int main()
+{
+  f(ns1::X());      // 「call f()」출력
+  g(ns1::Y());      // 「call g()」출력
+  g(ns1::ns2::Y()); // 「call g()」출력
+}
+```
 
 - 인라인 이름 공간의 외부 이름 공간을 using 지시문을 지정하여 인라인 이름 공간의 구성원이 외부 이름 공간 멤버로 암시 적으로 삽입된다
 
-	```
-	#include <iostream>
+```
+#include <iostream>
 
-	namespace ns1 {
-	  inline namespace ns2 {
-		void f()
-		{
-		  std::cout << "call f()" << std::endl;
-		}
-	  }
-	}
-
-	int main()
+namespace ns1 {
+  inline namespace ns2 {
+	void f()
 	{
-	  using namespace ns1;
-	  f();
+	  std::cout << "call f()" << std::endl;
 	}
-	```
+  }
+}
+
+int main()
+{
+  using namespace ns1;
+  f();
+}
+```
   
 - 인라인 이름 공간의 멤버는 외부 이름 공간에서 외부 이름 공간의 멤버 인 것처럼 명시적으로 인스턴스화 및 명시적 특수화 수 있다.
 
-	```
-	#include <iostream>
+```
+#include <iostream>
 
-	namespace ns1 {
-	  inline namespace ns2 {
-		template <class T>
-		struct X {
-		  static constexpr int value = 0;
-		};
-	  }
+namespace ns1 {
+  inline namespace ns2 {
+	template <class T>
+	struct X {
+	  static constexpr int value = 0;
+	};
+  }
 
-	  // 인라인 이름 공간에서 정의된 클래스 템플릿을 명시적으로 인스턴스화
-	  template struct X<int>;
+  // 인라인 이름 공간에서 정의된 클래스 템플릿을 명시적으로 인스턴스화
+  template struct X<int>;
 
-	  // 인라인 이름 공간에서 정의된 클래스트 템플릿을 명시적으로 특수화
-	  template <>
-	  struct X<void> {
-		static constexpr int value = 1;
-	  };
-	}
+  // 인라인 이름 공간에서 정의된 클래스트 템플릿을 명시적으로 특수화
+  template <>
+  struct X<void> {
+	static constexpr int value = 1;
+  };
+}
 
-	int main()
-	{
-	  std::cout << ns1::X<int>::value << std::endl;       // 0 출력
-	  std::cout << ns1::X<void>::value << std::endl;      // 1 출력
-	  std::cout << ns1::ns2::X<void>::value << std::endl; // 1 출력
-	}
-	```
+int main()
+{
+  std::cout << ns1::X<int>::value << std::endl;       // 0 출력
+  std::cout << ns1::X<void>::value << std::endl;      // 1 출력
+  std::cout << ns1::ns2::X<void>::value << std::endl; // 1 출력
+}
+```
  	
 - 인라인 이름 공간의 멤버와 외부 이름 공간의 멤버가 이름이 같은 경우 외부 이름 공간으로 이 멤버에 접근하면 이름 충돌로 에러가 된다.
 
-	```
-	namespace ns1 {
-	  inline namespace ns2 {
-		int a;
-	  }
-	  int a;
-	}
+```
+namespace ns1 {
+  inline namespace ns2 {
+	int a;
+  }
+  int a;
+}
 
-	int main()
-	{
-	  ns1::a = 0; // 이름 충돌로 에러
-	  //ns1::ns2::a = 0;  // 이것은 ok
-	}
-	```
+int main()
+{
+  ns1::a = 0; // 이름 충돌로 에러
+  //ns1::ns2::a = 0;  // 이것은 ok
+}
+```
   
   
 <br> 
