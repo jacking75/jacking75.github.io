@@ -9,13 +9,29 @@ permalink: /about/
 그러나 현재는 잠시(2016~2017년) NHN Next에서 'C++'와 '게임 서버 개발' 강의를 하고 있습니다. <br>
 
 <br>
-**C++, C#, Golang, Node.js, Elixir**를 좋아합니다.
+**C++, C#, Golang,  Node.js, Elixir**를 좋아합니다.
 <br>
 
 이 블로그에는 프로그래밍 관련 주제만 다룹니다.
 
-저의 외부 활동은 [여기](https://github.com/jacking75/choiHeungbae)를 참고해 주세요
+저의 외부 활동은 [여기](https://github.com/jacking75/choiHeungbae)를 참고해 주세요  
 
+
+#### 자격
+
+- SCJP   2000. 09. 28
+- Microsoft MVP(Visual C++) 2009, 2010, 2011
+
+<br>
+<br>
+
+
+#### 강연 자료 및 영상
+
+- [강연 리스트](/choiheungbae/강연.md)
+- [출판물 리스트](/choiheungbae/출판물.md)
+- [강연 동영상(유튜브)](http://www.youtube.com/user/jacking75?feature=mhee)
+- [강연 문서](http://www.slideshare.net/jacking)
 
 
 <br>
