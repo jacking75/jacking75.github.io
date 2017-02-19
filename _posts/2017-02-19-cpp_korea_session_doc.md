@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [강연문서]잘 알려지지 않은 숨은 진주, Winsock API - WSAPoll, Fast Loopback
+title: 잘 알려지지 않은 숨은 진주, Winsock API - WSAPoll, Fast Loopback
 published: true
 categories: [etc]
 tags: cpp_korea winsock wsapoll fast_loopback_tcp
