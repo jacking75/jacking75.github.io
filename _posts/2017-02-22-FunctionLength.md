@@ -5,9 +5,8 @@ published: true
 categories: [번역]
 tags: 번역 FunctionLength
 ---
-FunctionLength
-https://martinfowler.com/bliki/FunctionLength.html 
-
+[FunctionLength](https://martinfowler.com/bliki/FunctionLength.html )  
+  
 내 경력에서 함수의 길이는 어느 정도여야지? 라는 논란을 자주 들었다. 이것은 더 중요한 물음으로 대체할 수 있다. 그것은 어느 정도 길이의 코드가 되면 그것을 함수로 삼아야 하느냐는 것이다.  
   
 몇 가지 가이드 라인에서는 한 화면에 잡히지 않는다면, 이 밖에도 재이용 할지 여부를 기본으로 두 번 이상 반복 처리하면 함수로 해야 한다, 아니면 그대로 인라인으로 두자는 것도 있다.  
