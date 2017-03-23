@@ -5,17 +5,15 @@ published: true
 categories: [C++]
 tags: c++ c++11  type_info type_index
 ---
-C++에서는 RTTI(Run Time Type Infomation/Identification)라고 불리는 기능이 있다.
-( 타 언어의 리플렉션과 좀 비슷한데 기능은 훨씬 떨어짐 ^^;)
+C++에서는 RTTI(Run Time Type Infomation/Identification)라고 불리는 기능이 있다.  
+( 타 언어의 리플렉션과 좀 비슷한데 기능은 훨씬 떨어짐 ^^;)  
 std::type_info는 타입 정보를 표현하는 클래스이다. type_info 객체는 typeid 식에서 얻을 수 있다.  
 typeid 식은 오퍼랜드 식 혹은 type-id를 취한다.  
 typeid 식의 결과는 const한 std::type_info 타입 lvalue 이다.  
-typeid 식은 실행 시 타입 정보를 얻는다(컴파일 타임이 아니다!!!)
+typeid 식은 실행 시 타입 정보를 얻는다(컴파일 타임이 아니다!!!)  
   
 <br> 
-<br>  
-
- 
+   
 ### 사용 방법  
 typeid 식을 사용하려면 typeinfo 헤더를 include 할 필요가 있다.
 
@@ -24,7 +22,6 @@ typeid 식을 사용하려면 typeinfo 헤더를 include 할 필요가 있다.
 ```
   
 <br> 
-<br>  
   
     
 ### 예제 1
