@@ -13,7 +13,7 @@ cpplint는 python으로 만든 C++ 소스 코드가 [Google C++Style Guide](http
 
 ### cpplint 설치
 python 2.7에서 pip로 설치한다.  
-  
+
 ![](resource/vc_cpplint01.PNG) 
       
 <br>    
