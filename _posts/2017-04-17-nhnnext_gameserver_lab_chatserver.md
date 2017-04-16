@@ -6,7 +6,7 @@ categories: [Network]
 tags: c++ network select nhnnext gameserver
 ---
 NHN Next의 2016 ~ 2017년 게임서버 과정 수업에서 실습으로 만드는 채팅 서버 코드이다.  
-https://github.com/jacking75/nhn_next_gameserver_lab_2017_chatServer
+[Github](https://github.com/jacking75/nhn_next_gameserver_lab_2017_chatServer)
     
   
 - Windows 플랫폼만 지원(Linux 지원 어렵지 않음)
