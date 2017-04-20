@@ -13,13 +13,15 @@ tags: 세미나 모임
 ### 내용 
 1. Visual Studio 2017 Linux development with C++  (최흥배)  
 https://channel9.msdn.com/events/Connect/2016/119  
-위 동영상 설명하면서 같이 보기
+위 동영상 설명하면서 같이 보기  
    
-  
+<br> 
+    
 2. 게임 개발에서 눈여겨 볼AWS 서비스들  4번째 (이지현)  
-- API Gateway 활용하기(20분 - PPT 진행 )
-- 기본 게임 서비스 구축 (3번째 발표 내용) 상세 실습 (30분 - 노트북 지참하셔서 오시는 분들과 별도 진행)
+- API Gateway 활용하기(20분 - PPT 진행 )  
+- 기본 게임 서비스 구축 (3번째 발표 내용) 상세 실습 (30분 - 노트북 지참하셔서 오시는 분들과 별도 진행)  
   
-  
+<br>  
+    
 ### 신청
 신청은 [온오프믹스](http://onoffmix.com/event/97693)
