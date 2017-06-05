@@ -12,6 +12,5 @@ Windows Vista부터 CRITICAL_SECTION의 내부 구조가 바뀌었다고 한다.
 ![](/images/2017_criticalsection_owningThread.PNG)   
   
 <br> 
-<br>  
-  
-출처: http://cafe.naver.com/ongameserver/3546
+
+
