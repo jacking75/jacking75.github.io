@@ -1,6 +1,6 @@
 ---
 layout: post
-title: warning C4996: 'inet_addr'
+title: warning C4996 'inet_addr'
 published: true
 categories: [Network]
 tags: Network_Programming socket inet_addr
