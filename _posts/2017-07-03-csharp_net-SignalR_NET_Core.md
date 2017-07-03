@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SignalR .NET Core: Realtime cross-platform open web communication
+title: SignalR .NET Core - Realtime cross-platform open web communication
 published: true
 categories: [.NET]
 tags: c# .net SignalR
