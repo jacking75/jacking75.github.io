@@ -9,7 +9,7 @@ permalink: /about/
 그러나 현재는 잠시(2016~2017년) NHN Next에서 'C++'와 '게임 서버 개발' 강의를 하고 있습니다. <br>
 
 <br>
-**C++, C#, Golang,  Node.js, Elixir**를 좋아합니다.
+**C++, C#, Golang,  Elixir**를 좋아합니다.
 <br>
 
 이 블로그에는 프로그래밍 관련 주제만 다룹니다.
