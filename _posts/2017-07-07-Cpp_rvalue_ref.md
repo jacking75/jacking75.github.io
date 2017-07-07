@@ -5,7 +5,6 @@ published: true
 categories: [C++]
 tags: c++ c++11 rvalue_reference
 ---
-  
 ``` 
 #include<iostream>
 
