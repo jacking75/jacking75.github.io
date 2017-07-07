@@ -29,6 +29,8 @@ int main()
 {
   string s("s");
 
+  foo2(string("hoge"));   // rvalue 출력
+  
   foo(string("hoge"));   // lvalue 출력
   foo(s);    				// lvalue 출력
   foo(std::move(s));		// lvalue 출력
