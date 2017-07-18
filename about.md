@@ -19,7 +19,8 @@ permalink: /about/
 #### 자격
 
 - SCJP   2000. 09. 28
-- Microsoft MVP(Visual C++) 2009, 2010, 2011
+- Microsoft MVP(Visual C++) 2009, 2010, 2011  
+- Microsoft MVP(Visual Studio and Development Technologies) 2017  
 
 <br>
 <br>
