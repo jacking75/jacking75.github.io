@@ -2,7 +2,7 @@
 layout: post
 title: Actor 프레임워크의 메시지 전달에서 사용하는 용어
 published: true
-categories: [네트워크]
+categories: [Network]
 tags: network actor
 --- 
 - at-most-once delivery는 메커니즘에 건네지는 각 메시지에 대해 해당 메시지가 0 번 또는 1 번 전달됨을 의미합니다. 보다 일반적인 용어로는 메시지가 손실 될 수 있음을 의미합니다.  
