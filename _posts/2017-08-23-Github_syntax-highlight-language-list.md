@@ -6,14 +6,18 @@ categories: [etc]
 tags: github markdown
 ---
 Github의 markdown 에서 코드를 기술할 때  
+<pre>
 ```
 ```  
+</pre>  
 라는 블럭으로 코드를 감싼다.  
   
 여기에 더해서 코드 블럭에 있는 코드의 문법 하이라이트 기능을 사용하고 싶다면 해당 언어 키워드를 적으면 된다.  
 swift의 경우는 아래와 같다.  
+<pre>
 ```Swift
-```  
+```
+<pre>    
   
 [Github에서코드 블럭 문법 하이라이트 지원 언어 리스트 ](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)  
   
@@ -31,6 +35,7 @@ int main()
 ``` 
   
 문법 하이라이트를 사용한 경우    
+<pre>
 ```C++
 #include <iostream>
 
@@ -40,3 +45,8 @@ int main()
 	return 0;
 }
 ```
+<pre>  
+
+<br>  
+  
+내 블로그의 markdown 문법은 github의 markdown과 달라서 문법 하이라트를 사용할 수 없다. ㅠㅠ
