@@ -3,7 +3,7 @@ layout: post
 title: C++- Poco 라이브러리를 VC++에서 static 라이브러리로 사용할 때
 published: true
 categories: [C++]
-tags: c++ c++11
+tags: c++ poco vc
 ---
 Poco 라이브러리를 VC++ 에서 static 라이브러리로 사용할 때 lib 파일을 찾을 수 없다는 링크 에러를 만나는 경우는 아래의 선언을 추가하면 된다.  
 ```C++
