@@ -16,9 +16,10 @@ tags: vs vs2017
 %ProgramFiles(x86)%\Microsoft Visual Studio\Installer\resources\app\layout\InstallCleanup.exe 를 찾을 수 없는 경우는 https://www.visualstudio.com/downloads
 /  보다 최신 인스톨러를 다운로드하du 실행해 본다.   
  
-이것도 안 되면 깔끔하게 삭제한다.  
+   
+**이것도 안 되면 깔끔하게 삭제한다.**  
   
 <br>  
    
-출처 [Cleaning up corrupt Visual Studio instances | Setup & Install by Heath Stewart](https://blogs.msdn.microsoft.com/heaths/2017/09/01/cleaning-up-corrupt-visual-studio-instances/)  
+[출처](https://blogs.msdn.microsoft.com/heaths/2017/09/01/cleaning-up-corrupt-visual-studio-instances/)  
 
