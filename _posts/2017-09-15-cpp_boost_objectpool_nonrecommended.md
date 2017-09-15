@@ -7,6 +7,7 @@ tags: c++ boost object_pool
 ---
 boost 라이브러리에는 메모리 풀 라이브러리로 object_pool 이라는 것이 있다.  
 사용법은 아래와 같다.  
+  
 ```C++
 boost::object_pool<int> pool;
 int* p = pool.construct(10);
