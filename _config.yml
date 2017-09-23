@@ -35,7 +35,7 @@ footer-links:
 disqus: jacking75
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics: 
+google_analytics: UA-106924101-1
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
@@ -81,4 +81,4 @@ exclude:
     - LICENSE
     - README.md
 
-paginate: 5
+paginate: 10
