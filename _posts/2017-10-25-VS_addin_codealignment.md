@@ -1,6 +1,6 @@
 ---
 layout: post
-title:Visual Studio - 확장 툴 ‘Code alignment’
+title: Visual Studio - 확장 툴 Code alignment
 published: true
 categories: [Visual Studio]
 tags: vs
