@@ -9,19 +9,19 @@ tags: network baas gamesparks
 [BaaSでゲームサーバを作る話](https://www.slideshare.net/TomokazuTochi/baas-63829277)  
 2016년 7월을 자료이므로 지금과 다른 부분이 있을 수 있다.   
        
-![](/images/2017/gamesparks8 (1).PNG.PNG)  
+![](/images/2017/gamesparks8 (1).PNG)  
   
-![](/images/2017/gamesparks8 (2).PNG.PNG)  
+![](/images/2017/gamesparks8 (2).PNG)  
     
-![](/images/2017/gamesparks8 (3).PNG.PNG)  
+![](/images/2017/gamesparks8 (3).PNG)  
   
-![](/images/2017/gamesparks8 (4).PNG.PNG)  
+![](/images/2017/gamesparks8 (4).PNG)  
   
-![](/images/2017/gamesparks8 (5).PNG.PNG)  
+![](/images/2017/gamesparks8 (5).PNG)  
   
-![](/images/2017/gamesparks8 (6).PNG.PNG)  
+![](/images/2017/gamesparks8 (6).PNG)  
     
-![](/images/2017/gamesparks8 (7).PNG.PNG)  
+![](/images/2017/gamesparks8 (7).PNG)  
   
-![](/images/2017/gamesparks8 (8).PNG.PNG)  
+![](/images/2017/gamesparks8 (8).PNG)  
     
