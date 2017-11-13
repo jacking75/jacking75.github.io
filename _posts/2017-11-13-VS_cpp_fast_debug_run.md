@@ -18,9 +18,17 @@ VC++에서 디버그 모드로 실행할 경우 프로그램 실행 속도가 �
 [C/C++] -> [최적화] - [최적화] 부분을 Ox 또는 O2로 한다.
 [C/C++] -> [코드 생성] - [기본 런타임 검사] 부분을 기본값 으로 한다.
 </pre>  
+  
+<br>  
+<br>  
 
+아래 방법도 있다.    
+[Visual Studio C++ tip:  Quickly want to debug some code without a rebuilt](https://twitter.com/MittringMartin/status/912817354827907073)    
+  
+<pre>
+#pragma optimize( "", off )
 
-Visual Studio C++ tip:  Quickly want to debug some code without a rebuilt #pragma optimize( "", off )
-..code..
+//..code..
+
 #pragma optimize( "", on )
-https://twitter.com/MittringMartin/status/912817354827907073
+</pre>
