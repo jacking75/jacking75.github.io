@@ -38,7 +38,7 @@ insert_final_newline = true
 [Makefile]
 indent_style = tab
 
-[*.{cpp,hpp,ipp}}
+[*.{cpp,hpp,ipp}]
 charset = utf-8-bom
 
 [*.py]
