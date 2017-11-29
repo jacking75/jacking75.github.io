@@ -9,22 +9,26 @@ tags: .net c# .netcore
   
 ## 설치
 - Windwos
-    - 다운로드 후 설치
-    - https://www.microsoft.com/net/core#windowscmd
+<pre>
+- 다운로드 후 설치
+- https://www.microsoft.com/net/core#windowscmd
+</pre>
 - Ubuntu
-    - 패키지 추가
-    - curl https://packages.microsoft.com/keys/microsoft.asc| gpg-dearmor>microsoft.gpg
-    - sudo mv microsoft.gpg/etc/apt/trusted.gpg.d/microsoft.gpg
-    - 설치는 Ubuntu 버전마다 좀 다르다
-    - Ubuntu 17.04
-    - sudo sh-c'echo"deb[arch=amd64]https://packages.microsoft.com/repos/microsoft-ubuntu-zesty-prod zesty main">/etc/apt/sources.list.d/dotnetdev.list'
-    - Ubuntu 16.04
-    - sudo sh-c'echo"deb[arch=amd64]https://packages.microsoft.com/repos/microsoft-ubuntu-xenial-prod xenial main">/etc/apt/sources.list.d/dotnetdev.list'
-    - Ubuntu 14.04
-    - sudo sh-c'echo"deb[arch=amd64]https://packages.microsoft.com/repos/microsoft-ubuntu-trusty-prod trusty main">/etc/apt/sources.list.d/dotnetdev.list'
-    - 다음은 항상 그렇듯
-    - sudo apt-get update
-    - sudo apt-get install dotnet-sdk-2.0.0
+<pre>
+- 패키지 추가
+- curl https://packages.microsoft.com/keys/microsoft.asc| gpg-dearmor>microsoft.gpg
+- sudo mv microsoft.gpg/etc/apt/trusted.gpg.d/microsoft.gpg
+- 설치는 Ubuntu 버전마다 좀 다르다
+- Ubuntu 17.04
+- sudo sh-c'echo"deb[arch=amd64]https://packages.microsoft.com/repos/microsoft-ubuntu-zesty-prod zesty main">/etc/apt/sources.list.d/dotnetdev.list'
+- Ubuntu 16.04
+- sudo sh-c'echo"deb[arch=amd64]https://packages.microsoft.com/repos/microsoft-ubuntu-xenial-prod xenial main">/etc/apt/sources.list.d/dotnetdev.list'
+- Ubuntu 14.04
+- sudo sh-c'echo"deb[arch=amd64]https://packages.microsoft.com/repos/microsoft-ubuntu-trusty-prod trusty main">/etc/apt/sources.list.d/dotnetdev.list'
+- 다음은 항상 그렇듯
+- sudo apt-get update
+- sudo apt-get install dotnet-sdk-2.0.0
+</pre>  
   
   
 ## 신규 프로젝트/파일의 작성
