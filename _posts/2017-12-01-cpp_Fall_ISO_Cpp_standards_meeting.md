@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 번역 - Trip report: Fall ISO C++ standards meeting (Albuquerque) | Sutter’s Mill
+title: Trip report Fall ISO C++ standards meeting(Albuquerque) Sutter’s Mill
 published: true
 categories: [C++]
-tags: c++ c++20
+tags: c++ c++20 번역
 ---
 [Trip report: Fall ISO C++ standards meeting (Albuquerque) | Sutter’s Mill](https://herbsutter.com/2017/11/11/trip-report-fall-iso-c-standards-meeting-albuquerque/)  
 을 번역한 [일본 문서](https://cpplover.blogspot.kr/2017/11/c.html)를 일부 번역한 것이다.   
