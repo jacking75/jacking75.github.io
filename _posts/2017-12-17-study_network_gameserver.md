@@ -47,6 +47,9 @@ C# TCP 비동기 네트워크 프로그래밍
 게임 서버 만들기 2(C# 사용)  
   
 정도를 생각 중입니다. 대충 큰 것만 잡아서 실제 시작하면 더 추가됩니다.  
+초반의 강의 수준은 아래 책들의 내용과 비슷한 난이도 입니다.  
+- IT CookBook, TCP/IP 윈도우 소켓 프로그래밍( http://www.hanbit.co.kr/store/books/look.php?p_code=B1196865370 )
+- 윤성우의 열혈 TCP/IP 소켓 프로그래밍  
   
 <br>  
     
