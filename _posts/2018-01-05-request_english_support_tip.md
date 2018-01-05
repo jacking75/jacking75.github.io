@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 영어로 지원을 요청할 때의 Tips
+title: 영어로 기술 문의를 할 때의 영작문 Tips
 published: true
 categories: [번역]
 tags: 번역
