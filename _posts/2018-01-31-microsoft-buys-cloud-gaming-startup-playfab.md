@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Microsoft가 클라우드 게이밍 서비스의 PlayFab을 인수하는 Azure에 통합
+title: Microsoft가 클라우드 게이밍 서비스 PlayFab을 인수하여 Azure에 통합
 published: true
 categories: [번역]
 tags: 번역 PlayFab Azure
