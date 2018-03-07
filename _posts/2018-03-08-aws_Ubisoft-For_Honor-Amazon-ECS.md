@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ubisoft 사례: For Honor에서의 Amazon ECS 사용법
+title: Ubisoft 사례 - For Honor에서의 Amazon ECS 사용법
 published: true
 categories: [Network]
 tags: aws ubi 번역
