@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 구인: 서버 프로그래머
+title: 구인 - 서버 프로그래머
 published: true
 categories: [ETC]
 tags: etc job com2us
