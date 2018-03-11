@@ -46,7 +46,7 @@ WinHttpOpenRequest 함수는 요구의 일부로서 송신하는 RFC822, MIME �
   
 ### WinHttpSendRequest
 
-``` C
+``` 
 WCHAR szHeader[] = L"Content-Type: application/x-www-form-urlencoded\r\n";
 CHAR  szData[] = "msg=abc";
 DWORD dwHeaderLength = lstrlenW(szHeader);
@@ -66,7 +66,7 @@ WinHttpSendRequest(hRequest, szHeader, dwHeaderLength, szData, dwDataLength, dwD
 서버에 송신하고자 하는 데이터의 사이즈가 큰 같은 경우는 WinHttpSendRequest에 데이터 모두를 지정하지 않는 편이 좋을 수 있다.  
 이런 경우는 데이터를 여러 개로 분할하고, WinHttpWriteData를 반복하여 호출 하는 방법도 있다.  
   
-```C
+```
 BOOL WINAPI WinHttpWriteData( HINTERNET hRequest, 
 					LPCVOID lpBuffer, 
 					DWORD dwNumberOfBytesToWrite, 
@@ -92,7 +92,7 @@ POST에서는 데이터를 분할해서 보낼 수 있는데 마지막 데이터
 ### WinHttpQueryHeaders
 WinHttpQueryHeaders에서는 제2 인수에 WINHTTP_QUERY_STATUS_CODE을 지정하고 헤더 전체가 아닌 상태 코드만 얻는다.  
 이것에 의해서, HTTP 요청의 성공 여부를 확인하기 쉽게 된다.   
-```C
+```
 dwSize = sizeof(DWORD);
 WinHttpQueryHeaders(hRequest, WINHTTP_QUERY_STATUS_CODE | WINHTTP_QUERY_FLAG_NUMBER, WINHTTP_HEADER_NAME_BY_INDEX, &dwStatusCode, &dwSize, WINHTTP_NO_HEADER_INDEX);
 if (dwStatusCode == HTTP_STATUS_OK) {
