@@ -1,6 +1,6 @@
 ---
 layout: post
-title: C++ http 클라이언트 요청하기 - libcurl, cpp-netlib, cpprestsdk 
+title: C++ http 클라이언트 요청하기. libcurl, cpp-netlib, cpprestsdk 
 published: true
 categories: [Network]
 tags: cpp http libcurl cpp-netlib cpprestsdk
