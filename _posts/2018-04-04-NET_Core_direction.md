@@ -1,6 +1,6 @@
 ---
 layout: post
-title: .NET Core 2.1은 어디로 향하고 있는가?
+title: 닷넷 코어 2.1은 어디로 향하고 있는가?
 published: true
 categories: [.NET]
 tags: .net c# .netcore ubuntu
