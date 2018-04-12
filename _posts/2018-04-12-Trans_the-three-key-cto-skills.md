@@ -3,7 +3,7 @@ layout: post
 title: CTO에게 중요한 3가지 스킬
 published: true
 categories: [번역]
-tags: llvm clang
+tags: 번역 cto
 ---
 [원문](https://techcrunch.com/2018/02/25/the-three-key-cto-skills/)  
     
