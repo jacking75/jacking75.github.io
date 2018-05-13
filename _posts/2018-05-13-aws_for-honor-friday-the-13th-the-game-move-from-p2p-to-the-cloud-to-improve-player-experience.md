@@ -1,6 +1,6 @@
 ---
 layout: post
-title: AWS - P2P에서 클라우드로의 전환 : For Honor와 Friday the 13th The Game이 어떻게 플레이어 경험을 향상 시켰는가 
+title: AWS - P2P에서 클라우드로의 전환. For Honor와 Friday the 13th The Game이 어떻게 플레이어 경험을 향상 시켰는가 
 published: true
 categories: [Cloud]
 tags: cloud aws
