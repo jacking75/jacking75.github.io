@@ -206,10 +206,98 @@ s = append(s[:2], s{3:]...)
 ![](/images/2018/golang/0016.PNG)  
   
   
-### 2차원 배열을 한번에 초기화하기
-정확하게는 슬라이스의 슬라이스  
+### 배열과 배열 연결
+[[1,3,4][2,5,6]] 이 아닌 [1,3,4,2,5,6] 와 같이 연결하고 싶다.    
   
-<pre>
-matrix := [][]float64{{0, 0}, {0, 1}, {1, 0}, {1, 1}}
-</pre>  
+```
+slice1 := []int{0, 1, 2, 3, 4}
+slice2 := []int{55, 66, 77}
+fmt.Println(slice1)
+slice1 = append(slice1, slice2...) // The '...' is essential!
+fmt.Println(slice1)
+```  
+  
+  
+### GC
+슬라이스에서 보이는 값이 사라졌지만 내부 배열에 남아 있어서 GC 되지 않고 값이 남는 경우가 있다.  
+예를 들면 슬라이스에서 지정된 인덱스 값을 삭제하고 그 만큼 앞으로 땡겨서 값을 채워 넣는 del() 함수를 생각해 보자.  
+이미 내부 배열 내의 이동만으로 끝나면 다시 메모리를 확보할 필요는 없으므로 다음과 같이 한다.  
+  
+```
+func del(a[]int, i int)[]int<
+	copy(a[i:], a[i+1:])
+	a=a[:len(a)-1]
+	return a
+}
+
+func main(){
+	a:=[]int{1, 2, 3, 4, 5}
+	a=del(a, 2)
+	log.Println(a, len(a), cap(a)//[1 2 4 5] 4 5
+}
+```  
+  
+메모리의 Allocate도 없고 슬라이스 측에서 보면 값은 사라졌다.  
+그러나 내부 배열은 어떨까? del()의 뒤는 다음과 같이 되어 있다.(실제로 a[:cap(a)]에서 확인 가능하다.  
+  
+```
+//[]int*
+//|
+//[5]int[1, 2, 4, 5, 5]
+log.Println(a[:cap(a)])
+```  
+  
+이렇게 슬라이스에서는 보이지 않은 값이 내부 배열에 남아 있는 경우가 있다. 예를 들면 큰 사이즈의 구조체의 참조를 가진 슬라이스 등의 경우 내부 배열에 참조가 남아 있는 것으로 GC 되지 않을 가능성도 있다.
+만전을 기하기 위해서는 del()을 아래와 같이 끝의 값에 타입에 따른 제로 값(선언만 하고 초기화하지 않는 것으로 생성 가능)을 대입 하는 방법이 있다. int의 경우는 0 이지만 참조형의 슬라이스의 경우는 nil이 된다.  
+  
+```
+var zero int //제로 값
+
+func del(a[]int, i int)[]int<
+	copy(a[i:], a[i+1:])
+	a[len(a)-1]=zero  //제로 값, nil 대입
+	a=a[:len(a)-1]
+	return a
+}
+```  
+  
+삭제하는 범위가 큰 경우에는 일단 다른 조각으로 대비하여 GC를 재촉할 수 있다. 이 부분은 아래 링크의 글을 참고해라.  
+Slice Tricks: https://code.google.com/p/go-wiki/wiki/SliceTricks  
+Arrays, slices(and strings):The mechanics of'append'-The Go Blog: http://blog.golang.org/slices  
+Go Slices:usage and internals-The Go Blog: http://blog.golang.org/go-slices-usage-and-internals    
+   
+  
+### sort.Slice
+1.8 버전에 추가된 기능이다.  
+다양한 타입을 받아들이는데 속도가 sort.Sort와 비슷하다.    
+  
+```
+// 이전 sort.Sort 에서는 정렬 교환에 관한 조작을 정의하고 sort.Interface 로 넘겼다.
+type ByValue []string
+func (s ByValue) Len() int           { return len(s) }
+func (s ByValue) Swap(i, j int)      { s[i], s[j] = s[j], s[i] }
+func (s ByValue) Less(i, j int) bool { return s[i] < s[j] }
+var sslice []string = ...
+sort.Sort(ByValue(sslice))
+
+// sort.Slice
+var sslice []string = ...
+sort.Slice(sslice, func(i, j int) bool { return sslice[i] < sslice[j] })
+// 이후 Len 이나 Swap 에 상응하는 처리는 정의하지 않아도 괜찮을까?
+```  
+  
+```
+// []int
+hoge := []int{6, 2, 7, 1, 8, 4, 5}
+sort.Slice(hoge, func(i, j int) { return hoge[i] < hoge[j] })
+
+// []string
+piyo := []string{"6", "2", "7", "1", "8", "4", "5"}
+sort.Slice(piyo, func(i, j int) { return piyo[i] < piyo[j] })
+```  
+  
+sort.Slice의 첫 번째 인수는 interface{} 로 되어 있고, 내부에서 reflect 패키지를 사용하여 처리하고 있다.  
+그래서 어떤 slice 라도 처리할 수 있다. 그런데 속도는 그리 느리지 않다.  
+자세한 이유는 [(일어)sort.Slice 로 배우는 고속화 힌트](https://qiita.com/chimatter/items/f908507287fe2c7030e9)를 보자.  
+ 
   
