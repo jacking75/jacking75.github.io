@@ -11,6 +11,7 @@ tags: go slice array
   
 ### 배열 기초
 - 배열 사용  
+  
 ```
 // 크기 4, int 형 배열
 var a [4]int
@@ -28,6 +29,7 @@ i := a[0]
     - 요소 수를 지정한다. b := [2]string{ "aaa", "bbb" }
 	- 요소 수를 지정하지 않는다. b := [...]string{ "aaa", "bbb" }
 - 함수에 인자로 넘기면 기본적으로 값 전달이 된다. 참조 전달로 넘기고 싶다면 포인터를 사용해야 한다.   
+  
 ```
 func fnV(arr [4]int) {
 	for i, _ := range arr {
