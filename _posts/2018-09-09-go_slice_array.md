@@ -213,18 +213,3 @@ s = append(s[:2], s{3:]...)
 matrix := [][]float64{{0, 0}, {0, 1}, {1, 0}, {1, 1}}
 ```  
   
-아래와 같음  
-  
-```
-matrix := make([][]float64, 4)
-matrix[0] = []float64{0, 0}
-matrix[1] = []float64{0, 1}
-matrix[2] = []float64{1, 0}
-matrix[3] = []float64{1, 1}
-```  
-  
-```
-fmt.Println(matrix) // [[0 0] [0 1] [1 0] [1 1]]
-```  
-  
-  
