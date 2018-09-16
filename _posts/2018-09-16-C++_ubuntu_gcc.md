@@ -11,12 +11,9 @@ tags: c++ g++ gcc Ubuntu Ubuntu18
 7.3 버전은 C++17 표준을 지원한다.  
 [C++ Standards Support in GCC](https://gcc.gnu.org/projects/cxx-status.html#cxx17)  
 
-설치 명령어
-<pre>
+설치 명령어  
 $ sudo apt install g++  
-</pre>
-
-아래 명령어로 버전을 확인할 수 있다.
-<pre>
+  
+  
+아래 명령어로 버전을 확인할 수 있다.  
 $ g++ --version  
-</pre>
