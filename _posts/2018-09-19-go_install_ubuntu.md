@@ -17,7 +17,7 @@ sudo apt-get -y upgrade
 <pre>  
 cd /tmp
 wget https://dl.google.com/go/go1.11.linux-amd64.tar.gz
-<pre>  
+</pre>  
   
 <pre>  
 sudo tar -xvf go1.11.linux-amd64.tar.gz
