@@ -32,21 +32,21 @@ export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 </pre>  
   
-
-### Step 3 Update current shell session  
+  
+### Step 3 Update current shell session
 <pre>
 source ~/.profile
 </pre>  
   
-
-### Step 4  Verify Installation  
-아래 명령어로 설치된 버전을 확인한다.  
+  
+### Step 4  Verify Installation
+아래 명령어로 설치된 버전을 확인한다.
 <pre>
 go version
-</pre>  
+</pre>
 
-go의 환경 설정 정보를 확인한다  
-<pre>  
+go의 환경 설정 정보를 확인한다
+<pre>
 go env
-</pre>    
+</pre>
   
