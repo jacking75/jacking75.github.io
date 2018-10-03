@@ -2,8 +2,8 @@
 layout: post
 title: IDC Japan의 일본의 서버 OS 점유률
 published: true
-categories: [Network]
-tags: network IDCJapan
+categories: [OS]
+tags: OS IDCJapan
 --- 
 IDC Japan에 의하면 일본에서 서버 OS 점유률은 Windows Server 52％, Linux 24.8％. 클라우드에 의해 Linux가 높은 성장을 하고 있다고 한다.  
 Windows Server는 대기업의 프라이베트 클라우드나 클라우드 벤더 등의 대 규모 데이터 센터용으로 많이 판매 되고 있다고 한다.  
