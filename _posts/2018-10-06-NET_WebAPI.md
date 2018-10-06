@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 최소한으로 Web API 사이트 만들기
+title: 최소한으로 ASP.NET Web API 사이트 만들기
 published: true
 categories: [.NET]
 tags: .net c# asp.net webapi
