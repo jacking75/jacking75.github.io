@@ -15,7 +15,7 @@ http://www.codeproject.com/Articles/615804/Building-Out-a-Clean-REST-ful-WebAPI-
     https://github.com/xivSolutions/EmptyWebApiProject/archive/master.zip
 * 전체적인 흐름은 
     * Controllers에 빈 API 컨트롤러를 만들고 
-    * App_Start 폴더의 WebApiConfig.cs 파일을 아래처럼 한다.
+    * App_Start 폴더의 WebApiConfig.cs 파일을 아래처럼 한다.  
 	
 ```
 public const string DEFAULT_ROUTE_NAME = "MyDefaultRoute";
@@ -30,9 +30,9 @@ public static void Register(HttpConfiguration config)
 
    config.EnableSystemDiagnosticsTracing();
 }
-```
+```  
 
-    * Global.asax 파일에는 아래처럼 한다.
+    * Global.asax 파일에는 아래처럼 한다.  
 
 ```
 public class WebApiApplication : HttpApplication
@@ -45,13 +45,13 @@ public class WebApiApplication : HttpApplication
 	  EmptyWebApiProject.App_Start.FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
    }
 }
-```
+```  
     * NuGet으로 아래의 어셈블리 설치한다
     * NuGet으로 JQuery와 같은 스크립트 라이브러리도 설치한다
 * api 주소 명시적으로 할당하기
     * 암시적으로 주소를 할당하는 것 보다 명시적으로 하는 것이 좋을 듯. 다만 언제나 암시적인 것이 우선 되므로 암시적으로 할당 되지 않도록 api 함수 이름 지정을 조심하도록!
     * 주소 지정 방식은 여기를 참고 바람  
-    http://www.asp.net/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
+    http://www.asp.net/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2  
 
 ```
 // 주소 지정 방식 http://www.asp.net/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
