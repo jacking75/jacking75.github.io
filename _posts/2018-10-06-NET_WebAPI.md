@@ -31,7 +31,7 @@ public static void Register(HttpConfiguration config)
    config.EnableSystemDiagnosticsTracing();
 }
 ```  
-
+  
     * Global.asax 파일에는 아래처럼 한다.  
 
 ```
@@ -46,6 +46,7 @@ public class WebApiApplication : HttpApplication
    }
 }
 ```  
+
     * NuGet으로 아래의 어셈블리 설치한다
     * NuGet으로 JQuery와 같은 스크립트 라이브러리도 설치한다
 * api 주소 명시적으로 할당하기
@@ -54,7 +55,8 @@ public class WebApiApplication : HttpApplication
     http://www.asp.net/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2  
 
 ```
-// 주소 지정 방식 http://www.asp.net/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
+// 주소 지정 방식 
+http://www.asp.net/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 
 public class GameItemController : ApiController
 {
