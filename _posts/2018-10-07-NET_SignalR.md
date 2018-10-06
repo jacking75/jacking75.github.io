@@ -115,6 +115,7 @@ class Startup
 ```  
   
 * 클라이언트  
+
 ```
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -139,4 +140,5 @@ class Startup
 ```  
   
 
-* 참고 https://sakapon.wordpress.com/tag/asp-net-signalr/
+* 참고  
+https://sakapon.wordpress.com/tag/asp-net-signalr/
