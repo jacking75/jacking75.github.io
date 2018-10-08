@@ -15,6 +15,11 @@ buildwin.cmd 150 rebuild static_md both x64
 buildwin.cmd 150 rebuild static_md both Win32
 </pre>
   
+<pre>
+32bit: buildwin 110 build all both Win32 nosamples notests devenv
+64bit: buildwin 110 build all both x64 nosamples notests devenv
+</pre>  
+  
 <br>  
   
 poco 라이브러리 1.8 빌드 시 만약 VC의 옵션중 std:c++latest 혹은 std::C++17 이 있으면 'std::pointer_to_unary_function'을 찾지 못한다는 에러가 나온다.  
