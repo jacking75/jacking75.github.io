@@ -1,6 +1,6 @@
 ---
 layout: post
-title: golang - serialization benchmarks (2016년)
+title: golang - serialization benchmarks (2018년 8월)
 published: true
 categories: [Golang]
 tags: go serialization
