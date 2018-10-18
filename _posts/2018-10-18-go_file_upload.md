@@ -56,6 +56,26 @@ func (this *MyHandle) ServeHTTP(writer http.ResponseWriter, request *http.Reques
 func index (writer http.ResponseWriter , request *http.Request) {
     var t *template.Template;
     
+//<!-- 템플릿 안 -->
+//<!DOCTYPE html>
+//<!-- template用のhtmlファイル -->
+//<html>
+//<head>
+//    <title>ファイルアップロードテスト</title>
+//</head>
+//<body>
+//<div class="container">
+//    <h1>ファイルアップロードテスト</h1>
+//    <form method="post" action="http://localhost:11180/upload" enctype="multipart/form-data">
+//        <fieldset>
+//            <input type="file" name="image" id="upload_files" multiple="multiple">
+//            <input type="submit" name="submit" value="업로드 시작">
+//        </fieldset>
+//   </form>
+//</div>
+//</body>
+//</html>
+	
     // 템플릿 로드
     t, _ = template.ParseFiles("template/index.html");
     t.Execute(writer, struct{}{});
