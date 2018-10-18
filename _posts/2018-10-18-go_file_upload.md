@@ -58,14 +58,14 @@ func index (writer http.ResponseWriter , request *http.Request) {
     /*
 <!-- 템플릿 안 -->
 <!DOCTYPE html>
-<!-- template用のhtmlファイル -->
+<!-- template 용 html 파일 -->
 <html>
 <head>
-    <title>ファイルアップロードテスト</title>
+    <title>파일 업로드 테스트</title>
 </head>
 <body>
 <div class="container">
-    <h1>ファイルアップロードテスト</h1>
+    <h1>파일 업로드 테스트</h1>
     <form method="post" action="http://localhost:11180/upload" enctype="multipart/form-data">
         <fieldset>
             <input type="file" name="image" id="upload_files" multiple="multiple">
@@ -128,4 +128,53 @@ func upload ( w http.ResponseWriter, r *http.Request) {
 }
 </pre>  
 
+  
 
+  
+Go 언어의 핸들러는 http.Handler 타입 인터페이스를 가지고, ServeHTTP와 같은 시그니쳐를 가진 함수를 넘긴다.  
+HandleFunc 메소드와 http.Handler 타입 인터페이스에 매치하는 오브젝트를 넘기는 것으로 동작하는 Handle 메소드의 2가지가 있다.  
+  
+업로드한 파일의 처리는 마음대로 처리해도 되지만 위의 샘플에서는 Read 메소드로 지정 바이트씩 슬라이스에 보존.  
+또 주석에 io 라이브러리의 Copy 함수를 사용하면 좋다는 조언이 있어서 아래처럼 수정해 보았다.  
+
+server.go  
+```
+func upload ( w http.ResponseWriter, r *http.Request) {
+    // 이 핸들러 함수로의 접근은 POST 메소드만 허가
+    if  (r.Method != "POST") {
+        format.Fprintln(w, "허가한 메소드이다");
+        return;
+    }
+    var file multipart.File;
+    var fileHeader *multipart.FileHeader;
+    var e error;
+    var uploadedFileName string;
+    // POST된 파일 데이터를 얻는다
+    file , fileHeader , e = r.FormFile ("image");
+    format.Printf("%T", file);
+    if (e != nil) {
+        format.Fprintln(w, "파일 업로드를 확인할 수 없다");
+        return;
+    }
+    uploadedFileName = fileHeader.Filename;
+    // 서버 측에 저장하기 위해 빈 파일을 만든다
+    var saveImage *os.File;
+    saveImage, e = os.Create("./" + uploadedFileName);
+    if (e != nil) {
+        format.Fprintln(w, "서버 측에서 파일 저장할 수 없다");
+        return;
+    }
+    defer saveImage.Close();
+    defer file.Close();
+    size, e := io.Copy(saveImage, file);
+    if (e != nil) {
+        format.Println(e);
+        format.Println("업로드된 파일 쓰기에 실패하였다");
+        os.Exit(1);
+    }
+    format.Println("쓴 Byte 수=>");
+    format.Println(size);
+    format.Fprintf(w, "문자열 HTTP로 출력시킨다");
+}
+```  
+  
