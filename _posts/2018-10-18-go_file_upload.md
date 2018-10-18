@@ -10,7 +10,7 @@ tags: go upload
 Go 언어에서 HTML 페이지에서 파일 업로드 된 경우 서버 측의 임의의 장소에 업로드 된 파일을 저장하는 샘플 코드.  
 
 sever.go  
-```
+<pre>
 package main
 
 
@@ -55,27 +55,27 @@ func (this *MyHandle) ServeHTTP(writer http.ResponseWriter, request *http.Reques
 
 func index (writer http.ResponseWriter , request *http.Request) {
     var t *template.Template;
-    
-//<!-- 템플릿 안 -->
-//<!DOCTYPE html>
-//<!-- template用のhtmlファイル -->
-//<html>
-//<head>
-//    <title>ファイルアップロードテスト</title>
-//</head>
-//<body>
-//<div class="container">
-//    <h1>ファイルアップロードテスト</h1>
-//    <form method="post" action="http://localhost:11180/upload" enctype="multipart/form-data">
-//        <fieldset>
-//            <input type="file" name="image" id="upload_files" multiple="multiple">
-//            <input type="submit" name="submit" value="업로드 시작">
-//        </fieldset>
-//   </form>
-//</div>
-//</body>
-//</html>
-	
+    /*
+<!-- 템플릿 안 -->
+<!DOCTYPE html>
+<!-- template用のhtmlファイル -->
+<html>
+<head>
+    <title>ファイルアップロードテスト</title>
+</head>
+<body>
+<div class="container">
+    <h1>ファイルアップロードテスト</h1>
+    <form method="post" action="http://localhost:11180/upload" enctype="multipart/form-data">
+        <fieldset>
+            <input type="file" name="image" id="upload_files" multiple="multiple">
+            <input type="submit" name="submit" value="업로드 시작">
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>
+    */
     // 템플릿 로드
     t, _ = template.ParseFiles("template/index.html");
     t.Execute(writer, struct{}{});
@@ -126,4 +126,6 @@ func upload ( w http.ResponseWriter, r *http.Request) {
     }
     format.Fprintf(w, "문자열 HTTP로서 출력시킨다");
 }
-```  
+</pre>  
+
+
