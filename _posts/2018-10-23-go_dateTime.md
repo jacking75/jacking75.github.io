@@ -3,7 +3,7 @@ layout: post
 title: golang - time
 published: true
 categories: [Golang]
-tags: go slice array
+tags: go time golang
 ---
 아래 글은 golang을 공부할 목적으로 웹에서 본 글들을 정리한 것이다.  
   
@@ -410,6 +410,7 @@ fmt.Println(t4)              // 2014-12-19 00:00:00 +0900 JST
 http://play.golang.org/p/5HcqtJN1o6   
   
 - time.AddDate()에서 마이너스를 넣으면 과거가 된다  
+
 ```
 fmt.Println(t) // 2014-12-20 00:00:00 +0900 JST
 
