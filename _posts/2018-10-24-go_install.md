@@ -1,6 +1,6 @@
 ---
 layout: post
-title: golang - 설치와 GpPath
+title: golang - 설치와 GoPath
 published: true
 categories: [Golang]
 tags: go golang install gopath
