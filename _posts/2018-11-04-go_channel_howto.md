@@ -92,7 +92,7 @@ go func() {
 값의 교환이 없는 경우는 간단하다.
   
 
- #### Tips: 빈 struct에 대해서
+#### Tips: 빈 struct에 대해서
 값의 교환이 불필요한 경우의 channel에는 빈 struct가 좋다. 사이즈가 제로이기 때문.
 참고:http://dave.cheney.net/2014/03/25/the-empty-struct  
 
@@ -145,7 +145,7 @@ err := <-errChan
 channel을 준비하고, 거기에 송수신할 뿐이다.  
   
 
- #### Tips: channel의 버퍼 사이즈
+#### Tips: channel의 버퍼 사이즈
 channel의 버퍼가 1이 되는 것은 실행된 goroutine 측에서 값을 보낼 때 차단되지 않음을 확실히 하기 위해서이다.  
 버퍼 0의 경우 메인 측이 다른 처리를 하고 있어서 channel 수신을 할 때까지 goroutine 측의 channel로의 전송을 기다리게 된다.   처리가 완료된 goroutine은 적은 자원 관점에서도 빨리 처리 해야 하기 때문에, channel에 대한 송신이 차단되지 않도록 하고 있다.  
     
