@@ -120,6 +120,7 @@ BenchmarkLoadOrStoreCollision/*sync.Map-4                	50000000	        25.2 
 </pre>  
 
   
+  
 ### Range
 sync.Map이 더 빠르다. 지금까지의 결과와 마찬가지로 readOnly를 참조하기 때문.  
   
