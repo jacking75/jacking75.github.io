@@ -6,6 +6,9 @@ categories: [ETC]
 tags: etc programs tool util
 ---
 
+- asciinema  https://asciinema.org/
+    - 터미널에서의 입력 기록과 재생, web으로 공유도 가능
+	- 사용법 소개 (일어)  https://dev.classmethod.jp/tool/intro-asciinema/
 - cmder  http://cmder.net/
 - Windows 터미널. (일어) http://qiita.com/murachi1208/items/d6e4ce7ba75f1625fe51
 - Markdown을 사용하여 가볍게 슬라이드 작성・공개할 수 있는 서비스 「slideship.com」.  (일어) http://codezine.jp/article/detail/10278
