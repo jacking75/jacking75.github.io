@@ -10,11 +10,11 @@ panic은 고루틴의 콜스택을 돌아간다.
 즉 defer & recover는 panic이 발생한 고루틴 내에서 사용해야 한다.  
   
   
-![goroutine_callstack](../images/goroutine_callstack01.PNG)  
+![goroutine_callstack](../images/golang/goroutine_callstack01.PNG)  
 일바 함수 호출      
 
 <br/>
 
-![goroutine_callstack](../images/goroutine_callstack02.PNG)  
+![goroutine_callstack](../images/golang/goroutine_callstack02.PNG)  
 고루틴을 포함한 함수 호출  
     
