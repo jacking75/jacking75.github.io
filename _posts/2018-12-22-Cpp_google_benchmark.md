@@ -1,6 +1,6 @@
 ---
 layout: post
-title: AWS Lambda에서 C++ 프로그램 실행하기
+title: google benchmark로 C++ 코드 성능 측정하기
 published: true
 categories: [C++]
 tags: c++ benchmark google
