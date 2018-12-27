@@ -176,7 +176,7 @@ type SomeBehivor interface {
 
 // 공통 구조체 정의
 type DefaultStruct struct {
-	// 곹옹 멤버
+	// 공통 멤버
 	Name string
 }
 
