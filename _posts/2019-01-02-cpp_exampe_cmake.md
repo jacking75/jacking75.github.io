@@ -5,5 +5,5 @@ published: true
 categories: [C++]
 tags: c++ cmake example
 ---
-[GitHub 저장소에](https://github.com/jacking75/examples_CMake)에 공개하였다.  
+[GitHub 저장소](https://github.com/jacking75/examples_CMake)에 공개하였다.  
 CMake 기초 설명과 예제 코드가 있다  
