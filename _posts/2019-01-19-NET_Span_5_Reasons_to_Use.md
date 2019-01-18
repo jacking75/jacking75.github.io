@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Span <T>를 사용 할 5 가지 이유
+title: Span <T>를 사용해야 할 5가지 이유
 published: true
 categories: [.NET]
 tags: .net c# .netcore span
