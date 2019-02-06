@@ -4,7 +4,7 @@ title: LinuxBrew
 published: true
 categories: [OS]
 tags: OS Linux brew
---- 
+---
 ### 특징
 - macOS의 Homebrew를 리눅스로 이식한 것
 - http://linuxbrew.sh/
