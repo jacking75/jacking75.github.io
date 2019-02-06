@@ -102,14 +102,14 @@ _vsnprintf(char) ,  _vsntprintf TCHAR),  _vsnwprintf(wchar_t)
   
   
   
-###MultiByteToWideChar 사용 예
-
+### MultiByteToWideChar 사용 예
+  
 ```
 #include <windows.h>
 
 int main()
 {
-	char str[100] = "삼국지천";
+	char str[100] = "삼국지";
 	int npwstrLen = strlen(str) + 1;
 
 	// n1은 4, 널문자 포함 하지 않음
