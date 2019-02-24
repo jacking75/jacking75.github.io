@@ -13,6 +13,7 @@ tags: c++ cmake googletest gtest
     - 클래스 단위로 파일이 나누어져 있다고 가정한다.
 - mk.sh을 실행하면 build/src/ 에 응용 프로그램의 실행 파일, build/test/ 에 테스트의 실행 파일이 만들어진다.  
 
+<pre>
 ├── CMakeLists.txt
 ├── README.md
 ├── mk.sh
@@ -28,7 +29,8 @@ tags: c++ cmake googletest gtest
     ├── ClassATest.cpp
     ├── ClassBTest.cpp
     └── main.cpp
-  
+</pre>  
+
 - CMakeLists.txt
     - googletest를 외부 프로젝트로 넣는다
         - 이용 방법은 여러 가지가 있지만,이 방법 쪽이 수동으로 설치하지 않아도 되기에 어떤 버전을 사용하고 있는지 명확하다
