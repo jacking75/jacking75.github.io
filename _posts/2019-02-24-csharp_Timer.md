@@ -1,6 +1,6 @@
 ---
 layout: post
-title: C# - DispatcherTimer
+title: C# - 닷넷프레임워크의 타이머 관련 클래스
 published: true
 categories: [.NET]
 tags: c# net DispatcherTimer
