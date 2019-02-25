@@ -8,7 +8,7 @@ tags: c# net XmlTextReader xml
 ## XmlTextReader 로 XML 읽기
 - 예제 1
 
-<pre>
+```
 <?xml version="1.0" encoding="utf-8" ?>
 <Config>
   <log4net>
@@ -23,7 +23,7 @@ tags: c# net XmlTextReader xml
 
   <UniqueNumber DBConnect="Server=172.20.60.216;Database=Mobile_LogDB;Uid=MobileUser;Pwd=+ahqk@lf!" MaxStockCount="200" MinStockCount="100" />
 </Config>
-</pre>
+```
   
 - 위 xml 파일에서 <UniqueNumber> 태그의 값 읽기
   
@@ -40,7 +40,7 @@ reader.Close();
   
 - 예제 2
   
-<pre>
+```
 <?xml version="1.0" encoding="utf-8" ?>
 <Config>
   <DB>
@@ -58,7 +58,7 @@ reader.Close();
 
   <UniqueNumber URI="http://172.20.60.207:8732" API="CommonLogService/UniqueNumberRange" MaxStockCount="200" MinStockCount="100" />
 </Config>
-</pre>
+```
    
 ```   
 // <REDIS>의 <DBINFO> 읽기
