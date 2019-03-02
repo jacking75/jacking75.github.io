@@ -22,15 +22,16 @@ for (int i = arySeg.Offset; i < arySeg.Offset + arySeg.Count; i++)
 }
 ```
   
+아래와 같이 표시된다  
 <pre>
-// 아래와 같이 표시된다
-//2:2
-//3:3
-//4:4
-//5:5
-//6:6
+2:2
+3:3
+4:4
+5:5
+6:6
 </pre>
   
+<br/>
   
 arySeg.Array은 ary1과 같으므로 배열을 사용하는 곳에 ArraySegment를 사용하기 위해서는 아래처럼 한다.  
 ```
