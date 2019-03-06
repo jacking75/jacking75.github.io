@@ -1,6 +1,6 @@
 ---
 layout: post
-title: C# - XmlTextReader
+title: C# - Trace
 published: true
 categories: [.NET]
 tags: c# net trace
@@ -185,9 +185,9 @@ namespace SFSecsUnitTest
 			TraceListener listener = new TextWriterTraceListener(
 										@"c:\SFSecsUnitTest.trace", "TextWriterListener");
 			listener.TraceOutputOptions = TraceOptions.DateTime |
-																TraceOptions.Callstack |
-																TraceOptions.ThreadId |
-															   TraceOptions.Timestamp;
+                                                                TraceOptions.Callstack |
+                                                                TraceOptions.ThreadId |
+                                                                TraceOptions.Timestamp;
 
 			debugTraceSource.Listeners.Add(listener);
 		}
@@ -215,8 +215,7 @@ namespace SFSecsUnitTest
 		[TestMethod]
 		public void TestMethod1()
 		{
-			Global.DebugTraceSource.TraceEvent(TraceEventType.Verbose, 1,
-																	 "GlobalTest.TestMethod1() - Enter");
+			Global.DebugTraceSource.TraceEvent(TraceEventType.Verbose, 1,"GlobalTest.TestMethod1() - Enter");
 
 		}
 	}
