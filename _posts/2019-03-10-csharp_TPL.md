@@ -1173,7 +1173,7 @@ static Task<IPAddress[]> GetHostAddressesAsTask(
 Task.Run(() => { /* Something */ });
 ```
   
-<img src="https://drive.google.com/file/d/0B1EFZOfsV3gqMjkxcEN5TElsRFk" >
+<img src="https://drive.google.com/file/d/0B1EFZOfsV3gqMjkxcEN5TElsRFk">
   
 - http://csharp.keicode.com/basic/async-how-to-write.php
   
