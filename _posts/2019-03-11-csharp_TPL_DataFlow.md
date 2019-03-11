@@ -83,8 +83,8 @@ Output:
 // Write to and read from the message block concurrently. 
 var post01 = Task.Run(() =>
    {
-	  bufferBlock.Post(0);
-	  bufferBlock.Post(1);
+      bufferBlock.Post(0);
+      bufferBlock.Post(1);
    });
 var receive = Task.Run(() => 
    {
@@ -308,13 +308,13 @@ static TimeSpan TimeDataflowComputations(int maxDegreeOfParallelism,
    int messageCount)
 {
    var workerBlock = new ActionBlock<int>(
-	  millisecondsTimeout => Thread.Sleep(millisecondsTimeout),
+      millisecondsTimeout => Thread.Sleep(millisecondsTimeout),
 
-	  // 몇개를 병렬로 실행할지 정한다.
-	  new ExecutionDataflowBlockOptions
-	  {
-		 MaxDegreeOfParallelism = maxDegreeOfParallelism
-	  });
+      // 몇개를 병렬로 실행할지 정한다.
+      new ExecutionDataflowBlockOptions
+      {
+         MaxDegreeOfParallelism = maxDegreeOfParallelism
+      });
 
 
    Stopwatch stopwatch = new Stopwatch();
@@ -322,8 +322,8 @@ static TimeSpan TimeDataflowComputations(int maxDegreeOfParallelism,
 
    for (int i = 0; i < messageCount; i++)
    {
-	  // 처리할 작업을 요청한다. ActionBlock을 생성할 때 인자로 넣은 함수가 실행된다.
-	  workerBlock.Post(1000);
+      // 처리할 작업을 요청한다. ActionBlock을 생성할 때 인자로 넣은 함수가 실행된다.
+      workerBlock.Post(1000);
    }
    // 더 이상 처리할 작업을 받지 않음을 통보
    workerBlock.Complete();
@@ -353,14 +353,14 @@ static void Main(string[] args)
   // This causes the dataflow block to process messages serially.
   elapsed = TimeDataflowComputations(1, messageCount);
   Console.WriteLine("Degree of parallelism = {0}; message count = {1}; " +
-	 "elapsed time = {2}ms.", 1, messageCount, (int)elapsed.TotalMilliseconds);
+     "elapsed time = {2}ms.", 1, messageCount, (int)elapsed.TotalMilliseconds);
 
   // Perform the computations again. This time, specify the number of 
   // processors as the maximum degree of parallelism. This causes
   // multiple messages to be processed in parallel.
   elapsed = TimeDataflowComputations(processorCount, messageCount);
   Console.WriteLine("Degree of parallelism = {0}; message count = {1}; " +
-	 "elapsed time = {2}ms.", processorCount, messageCount, (int)elapsed.TotalMilliseconds);
+     "elapsed time = {2}ms.", processorCount, messageCount, (int)elapsed.TotalMilliseconds);
 }
 ```
   
@@ -377,7 +377,7 @@ var throwIfNegative = new ActionBlock<int>(n =>
    Console.WriteLine("n = {0}", n);
    if (n < 0)
    {
-	  throw new ArgumentOutOfRangeException();
+      throw new ArgumentOutOfRangeException();
    }
 });
 
@@ -399,9 +399,9 @@ catch (AggregateException ae)
    // exceptions are propagated through an AggregateException object.
    ae.Handle(e =>
    {
-	  Console.WriteLine("Encountered {0}: {1}", 
-		 e.GetType().Name, e.Message);
-	  return true;
+      Console.WriteLine("Encountered {0}: {1}", 
+         e.GetType().Name, e.Message);
+      return true;
    });
 }
 ```
@@ -430,7 +430,7 @@ var throwIfNegative = new ActionBlock<int>(n =>
    Console.WriteLine("n = {0}", n);
    if (n < 0)
    {
-	  throw new ArgumentOutOfRangeException();
+      throw new ArgumentOutOfRangeException();
    }
 });
 
@@ -439,7 +439,7 @@ var throwIfNegative = new ActionBlock<int>(n =>
 throwIfNegative.Completion.ContinueWith(task =>
 {
    Console.WriteLine("The status of the completion task is '{0}'.", 
-	  task.Status);
+      task.Status);
 });
 
 // Post values to the block.
@@ -460,9 +460,9 @@ catch (AggregateException ae)
    // exceptions are propagated through an AggregateException object.
    ae.Handle(e =>
    {
-	  Console.WriteLine("Encountered {0}: {1}",
-		 e.GetType().Name, e.Message);
-	  return true;
+      Console.WriteLine("Encountered {0}: {1}",
+         e.GetType().Name, e.Message);
+      return true;
    });
 }
 ```
@@ -618,17 +618,17 @@ for (int i = 0; i < 2; i++)
    var data = joinBlock.Receive();
    switch (data.Item3)
    {
-	  case '+':
-		 Console.WriteLine("{0} + {1} = {2}",
-			data.Item1, data.Item2, data.Item1 + data.Item2);
-		 break;
-	  case '-':
-		 Console.WriteLine("{0} - {1} = {2}",
-			data.Item1, data.Item2, data.Item1 - data.Item2);
-		 break;
-	  default:
-		 Console.WriteLine("Unknown operator '{0}'.", data.Item3);
-		 break;
+      case '+':
+         Console.WriteLine("{0} + {1} = {2}",
+            data.Item1, data.Item2, data.Item1 + data.Item2);
+         break;
+      case '-':
+         Console.WriteLine("{0} - {1} = {2}",
+            data.Item1, data.Item2, data.Item1 - data.Item2);
+         break;
+      default:
+         Console.WriteLine("Unknown operator '{0}'.", data.Item3);
+         break;
    }
 }
 ```
@@ -650,7 +650,7 @@ Output:
 Func<int, int> DoWork = n =>
 {
    if (n < 0)
-	  throw new ArgumentOutOfRangeException();
+      throw new ArgumentOutOfRangeException();
    return n;
 };
 
@@ -663,15 +663,15 @@ foreach (int i in new int[] { 5, 6, -7, -22, 13, 55, 0 })
 {
    try
    {
-	  // Post the result of the worker to the  
-	  // first target of the block.
-	  batchedJoinBlock.Target1.Post(DoWork(i));
+      // Post the result of the worker to the  
+      // first target of the block.
+      batchedJoinBlock.Target1.Post(DoWork(i));
    }
    catch (ArgumentOutOfRangeException e) 
    {
-	  // If an error occurred, post the Exception to the  
-	  // second target of the block.
-	  batchedJoinBlock.Target2.Post(e); 
+      // If an error occurred, post the Exception to the  
+      // second target of the block.
+      batchedJoinBlock.Target2.Post(e); 
    }
 }
 
@@ -718,64 +718,64 @@ class DataflowProducerConsumer
    // Demonstrates the production end of the producer and consumer pattern. 
    static void Produce(ITargetBlock<byte[]> target)
    {
-	  // Create a Random object to generate random data.
-	  Random rand = new Random();
+      // Create a Random object to generate random data.
+      Random rand = new Random();
 
-	  // In a loop, fill a buffer with random data and 
-	  // post the buffer to the target block. 
-	  for (int i = 0; i < 100; i++)
-	  {
-		 // Create an array to hold random byte data. 
-		 byte[] buffer = new byte[1024];
+      // In a loop, fill a buffer with random data and 
+      // post the buffer to the target block. 
+      for (int i = 0; i < 100; i++)
+      {
+         // Create an array to hold random byte data. 
+         byte[] buffer = new byte[1024];
 
-		 // Fill the buffer with random bytes.
-		 rand.NextBytes(buffer);
+         // Fill the buffer with random bytes.
+         rand.NextBytes(buffer);
 
-		 // Post the result to the message block.
-		 target.Post(buffer);
-	  }
+         // Post the result to the message block.
+         target.Post(buffer);
+      }
 
-	  // Set the target to the completed state to signal to the consumer 
-	  // that no more data will be available.
-	  target.Complete();
+      // Set the target to the completed state to signal to the consumer 
+      // that no more data will be available.
+      target.Complete();
    }
 
    // Demonstrates the consumption end of the producer and consumer pattern. 
    static async Task<int> ConsumeAsync(ISourceBlock<byte[]> source)
    {
-	  // Initialize a counter to track the number of bytes that are processed. 
-	  int bytesProcessed = 0;
+      // Initialize a counter to track the number of bytes that are processed. 
+      int bytesProcessed = 0;
 
-	  // Read from the source buffer until the source buffer has no  
-	  // available output data. 
-	  while (await source.OutputAvailableAsync())
-	  {
-		 byte[] data = source.Receive();
+      // Read from the source buffer until the source buffer has no  
+      // available output data. 
+      while (await source.OutputAvailableAsync())
+      {
+         byte[] data = source.Receive();
 
-		 // Increment the count of bytes received.
-		 bytesProcessed += data.Length;
-	  }
+         // Increment the count of bytes received.
+         bytesProcessed += data.Length;
+      }
 
-	  return bytesProcessed;
+      return bytesProcessed;
    }
 
    static void Main(string[] args)
    {
-	  // Create a BufferBlock<byte[]> object. This object serves as the  
-	  // target block for the producer and the source block for the consumer. 
-	  var buffer = new BufferBlock<byte[]>();
+      // Create a BufferBlock<byte[]> object. This object serves as the  
+      // target block for the producer and the source block for the consumer. 
+      var buffer = new BufferBlock<byte[]>();
 
-	  // Start the consumer. The Consume method runs asynchronously.  
-	  var consumer = ConsumeAsync(buffer);
+      // Start the consumer. The Consume method runs asynchronously.  
+      var consumer = ConsumeAsync(buffer);
 
-	  // Post source data to the dataflow block.
-	  Produce(buffer);
+      // Post source data to the dataflow block.
+      Produce(buffer);
 
-	  // Wait for the consumer to process all data.
-	  consumer.Wait();
+      // Wait for the consumer to process all data.
+      consumer.Wait();
 
-	  // Print the count of bytes processed to the console.
-	  Console.WriteLine("Processed {0} bytes.", consumer.Result);
+      // Print the count of bytes processed to the console.
+      Console.WriteLine("Processed {0} bytes.", consumer.Result);
    }
 }
 ```
@@ -799,12 +799,12 @@ static async Task<int> ConsumeAsync(IReceivableSourceBlock<byte[]> source)
    // available output data.
    while (await source.OutputAvailableAsync())
    {
-	  byte[] data;
-	  while (source.TryReceive(out data))
-	  {
-		 // Increment the count of bytes received.
-		 bytesProcessed += data.Length;
-	  }
+      byte[] data;
+      while (source.TryReceive(out data))
+      {
+         // Increment the count of bytes received.
+         bytesProcessed += data.Length;
+      }
    }
 
    return bytesProcessed;
@@ -829,71 +829,71 @@ class DataflowExecutionBlocks
    // contains. 
    static int CountBytes(string path)
    {
-	  byte[] buffer = new byte[1024];
-	  int totalZeroBytesRead = 0;
-	  using (var fileStream = File.OpenRead(path))
-	  {
-		 int bytesRead = 0;
-		 do
-		 {
-			bytesRead = fileStream.Read(buffer, 0, buffer.Length);
-			totalZeroBytesRead += buffer.Count(b => b == 0);
-		 } while (bytesRead > 0);
-	  }
+      byte[] buffer = new byte[1024];
+      int totalZeroBytesRead = 0;
+      using (var fileStream = File.OpenRead(path))
+      {
+         int bytesRead = 0;
+         do
+         {
+            bytesRead = fileStream.Read(buffer, 0, buffer.Length);
+            totalZeroBytesRead += buffer.Count(b => b == 0);
+         } while (bytesRead > 0);
+      }
 
-	  return totalZeroBytesRead;
+      return totalZeroBytesRead;
    }
 
    static void Main(string[] args)
    {
-	  // Create a temporary file on disk. 
-	  string tempFile = Path.GetTempFileName();
+      // Create a temporary file on disk. 
+      string tempFile = Path.GetTempFileName();
 
-	  // Write random data to the temporary file. 
-	  using (var fileStream = File.OpenWrite(tempFile))
-	  {
-		 Random rand = new Random();
-		 byte[] buffer = new byte[1024];
-		 for (int i = 0; i < 512; i++)
-		 {
-			rand.NextBytes(buffer);
-			fileStream.Write(buffer, 0, buffer.Length);
-		 }
-	  }
+      // Write random data to the temporary file. 
+      using (var fileStream = File.OpenWrite(tempFile))
+      {
+         Random rand = new Random();
+         byte[] buffer = new byte[1024];
+         for (int i = 0; i < 512; i++)
+         {
+            rand.NextBytes(buffer);
+            fileStream.Write(buffer, 0, buffer.Length);
+         }
+      }
 
-	  // Create an ActionBlock<int> object that prints to the console  
-	  // the number of bytes read. 
-	  var printResult = new ActionBlock<int>(zeroBytesRead =>
-	  {
-		 Console.WriteLine("{0} contains {1} zero bytes.",
-			Path.GetFileName(tempFile), zeroBytesRead);
-	  });
+      // Create an ActionBlock<int> object that prints to the console  
+      // the number of bytes read. 
+      var printResult = new ActionBlock<int>(zeroBytesRead =>
+      {
+         Console.WriteLine("{0} contains {1} zero bytes.",
+            Path.GetFileName(tempFile), zeroBytesRead);
+      });
 
-	  // Create a TransformBlock<string, int> object that calls the  
-	  // CountBytes function and returns its result. 
-	  var countBytes = new TransformBlock<string, int>(
-		 new Func<string, int>(CountBytes));
+      // Create a TransformBlock<string, int> object that calls the  
+      // CountBytes function and returns its result. 
+      var countBytes = new TransformBlock<string, int>(
+         new Func<string, int>(CountBytes));
 
-	  // Link the TransformBlock<string, int> object to the  
-	  // ActionBlock<int> object.
-	  countBytes.LinkTo(printResult);
+      // Link the TransformBlock<string, int> object to the  
+      // ActionBlock<int> object.
+      countBytes.LinkTo(printResult);
 
-	  // Create a continuation task that completes the ActionBlock<int> 
-	  // object when the TransformBlock<string, int> finishes.
-	  countBytes.Completion.ContinueWith(delegate { printResult.Complete(); });
+      // Create a continuation task that completes the ActionBlock<int> 
+      // object when the TransformBlock<string, int> finishes.
+      countBytes.Completion.ContinueWith(delegate { printResult.Complete(); });
 
-	  // Post the path to the temporary file to the  
-	  // TransformBlock<string, int> object.
-	  countBytes.Post(tempFile);
+      // Post the path to the temporary file to the  
+      // TransformBlock<string, int> object.
+      countBytes.Post(tempFile);
 
-	  // Requests completion of the TransformBlock<string, int> object.
-	  countBytes.Complete();
+      // Requests completion of the TransformBlock<string, int> object.
+      countBytes.Complete();
 
-	  // Wait for the ActionBlock<int> object to print the message.
-	  printResult.Completion.Wait();
+      // Wait for the ActionBlock<int> object to print the message.
+      printResult.Completion.Wait();
 
-	  // Delete the temporary file.
-	  File.Delete(tempFile);
+      // Delete the temporary file.
+      File.Delete(tempFile);
    }
 }
 ```
@@ -913,15 +913,15 @@ static async Task<int> CountBytesAsync(string path)
    byte[] buffer = new byte[1024];
    int totalZeroBytesRead = 0;
    using (var fileStream = new FileStream(
-	  path, FileMode.Open, FileAccess.Read, FileShare.Read, 0x1000, true))
+      path, FileMode.Open, FileAccess.Read, FileShare.Read, 0x1000, true))
    {
-	  int bytesRead = 0;
-	  do
-	  {
-		 // Asynchronously read from the file stream.
-		 bytesRead = await fileStream.ReadAsync(buffer, 0, buffer.Length);
-		 totalZeroBytesRead += buffer.Count(b => b == 0);
-	  } while (bytesRead > 0);
+      int bytesRead = 0;
+      do
+      {
+         // Asynchronously read from the file stream.
+         bytesRead = await fileStream.ReadAsync(buffer, 0, buffer.Length);
+         totalZeroBytesRead += buffer.Count(b => b == 0);
+      } while (bytesRead > 0);
    }
 
    return totalZeroBytesRead;
@@ -934,15 +934,15 @@ var countBytesAsync = new TransformBlock<string, int>(async path =>
    byte[] buffer = new byte[1024];
    int totalZeroBytesRead = 0;
    using (var fileStream = new FileStream(
-	  path, FileMode.Open, FileAccess.Read, FileShare.Read, 0x1000, true))
+      path, FileMode.Open, FileAccess.Read, FileShare.Read, 0x1000, true))
    {
-	  int bytesRead = 0;
-	  do
-	  {
-		 // Asynchronously read from the file stream.
-		 bytesRead = await fileStream.ReadAsync(buffer, 0, buffer.Length);
-		 totalZeroBytesRead += buffer.Count(b => b == 0);
-	  } while (bytesRead > 0);
+      int bytesRead = 0;
+      do
+      {
+         // Asynchronously read from the file stream.
+         bytesRead = await fileStream.ReadAsync(buffer, 0, buffer.Length);
+         totalZeroBytesRead += buffer.Count(b => b == 0);
+      } while (bytesRead > 0);
    }
 
    return totalZeroBytesRead;
@@ -991,62 +991,62 @@ class Program
    // Performs several computations by using dataflow and returns the elapsed 
    // time required to perform the computations. 
    static TimeSpan TimeDataflowComputations(int maxDegreeOfParallelism,
-	  int messageCount)
+      int messageCount)
    {
-	  // Create an ActionBlock<int> that performs some work. 
-	  var workerBlock = new ActionBlock<int>(
-		 // Simulate work by suspending the current thread.
-		 millisecondsTimeout => Thread.Sleep(millisecondsTimeout),
-		 // Specify a maximum degree of parallelism. 
-		 new ExecutionDataflowBlockOptions
-		 {
-			MaxDegreeOfParallelism = maxDegreeOfParallelism
-		 });
+      // Create an ActionBlock<int> that performs some work. 
+      var workerBlock = new ActionBlock<int>(
+         // Simulate work by suspending the current thread.
+         millisecondsTimeout => Thread.Sleep(millisecondsTimeout),
+         // Specify a maximum degree of parallelism. 
+         new ExecutionDataflowBlockOptions
+         {
+            MaxDegreeOfParallelism = maxDegreeOfParallelism
+         });
 
-	  // Compute the time that it takes for several messages to  
-	  // flow through the dataflow block.
+      // Compute the time that it takes for several messages to  
+      // flow through the dataflow block.
 
-	  Stopwatch stopwatch = new Stopwatch();
-	  stopwatch.Start();
+      Stopwatch stopwatch = new Stopwatch();
+      stopwatch.Start();
 
-	  for (int i = 0; i < messageCount; i++)
-	  {
-		 workerBlock.Post(1000);
-	  }
-	  workerBlock.Complete();
+      for (int i = 0; i < messageCount; i++)
+      {
+         workerBlock.Post(1000);
+      }
+      workerBlock.Complete();
 
-	  // Wait for all messages to propagate through the network.
-	  workerBlock.Completion.Wait();
+      // Wait for all messages to propagate through the network.
+      workerBlock.Completion.Wait();
 
-	  // Stop the timer and return the elapsed number of milliseconds.
-	  stopwatch.Stop();
-	  return stopwatch.Elapsed;
+      // Stop the timer and return the elapsed number of milliseconds.
+      stopwatch.Stop();
+      return stopwatch.Elapsed;
    }
    static void Main(string[] args)
    {
-	  int processorCount = Environment.ProcessorCount;
-	  int messageCount = processorCount;
+      int processorCount = Environment.ProcessorCount;
+      int messageCount = processorCount;
 
-	  // Print the number of processors on this computer.
-	  Console.WriteLine("Processor count = {0}.", processorCount);
+      // Print the number of processors on this computer.
+      Console.WriteLine("Processor count = {0}.", processorCount);
 
-	  TimeSpan elapsed;
+      TimeSpan elapsed;
 
-	  // Perform two dataflow computations and print the elapsed 
-	  // time required for each. 
+      // Perform two dataflow computations and print the elapsed 
+      // time required for each. 
 
-	  // This call specifies a maximum degree of parallelism of 1. 
-	  // This causes the dataflow block to process messages serially.
-	  elapsed = TimeDataflowComputations(1, messageCount);
-	  Console.WriteLine("Degree of parallelism = {0}; message count = {1}; " +
-		 "elapsed time = {2}ms.", 1, messageCount, (int)elapsed.TotalMilliseconds);
+      // This call specifies a maximum degree of parallelism of 1. 
+      // This causes the dataflow block to process messages serially.
+      elapsed = TimeDataflowComputations(1, messageCount);
+      Console.WriteLine("Degree of parallelism = {0}; message count = {1}; " +
+         "elapsed time = {2}ms.", 1, messageCount, (int)elapsed.TotalMilliseconds);
 
-	  // Perform the computations again. This time, specify the number of  
-	  // processors as the maximum degree of parallelism. This causes 
-	  // multiple messages to be processed in parallel.
-	  elapsed = TimeDataflowComputations(processorCount, messageCount);
-	  Console.WriteLine("Degree of parallelism = {0}; message count = {1}; " +
-		 "elapsed time = {2}ms.", processorCount, messageCount, (int)elapsed.TotalMilliseconds);
+      // Perform the computations again. This time, specify the number of  
+      // processors as the maximum degree of parallelism. This causes 
+      // multiple messages to be processed in parallel.
+      elapsed = TimeDataflowComputations(processorCount, messageCount);
+      Console.WriteLine("Degree of parallelism = {0}; message count = {1}; " +
+         "elapsed time = {2}ms.", processorCount, messageCount, (int)elapsed.TotalMilliseconds);
    }
 }
 ```
@@ -1075,101 +1075,101 @@ namespace WriterReadersWinForms
 {
    public partial class Form1 : Form
    {
-	  // Broadcasts values to an ActionBlock<int> object that is associated 
-	  // with each check box.
-	  BroadcastBlock<int> broadcaster = new BroadcastBlock<int>(null);
+      // Broadcasts values to an ActionBlock<int> object that is associated 
+      // with each check box.
+      BroadcastBlock<int> broadcaster = new BroadcastBlock<int>(null);
 
-	  public Form1()
-	  {         
-		 InitializeComponent();
+      public Form1()
+      {         
+         InitializeComponent();
 
 
-		 // Create an ActionBlock<CheckBox> object that toggles the state 
-		 // of CheckBox objects. 
-		 // Specifying the current synchronization context enables the  
-		 // action to run on the user-interface thread. 
-		 var toggleCheckBox = new ActionBlock<CheckBox>(checkBox =>
-		 {
-			checkBox.Checked = !checkBox.Checked;
-		 }, 
-		 new ExecutionDataflowBlockOptions
-		 {
-			TaskScheduler = TaskScheduler.FromCurrentSynchronizationContext()  // UI 스레드에서 ActionBlock을 실행되도록 설정
-		 });
+         // Create an ActionBlock<CheckBox> object that toggles the state 
+         // of CheckBox objects. 
+         // Specifying the current synchronization context enables the  
+         // action to run on the user-interface thread. 
+         var toggleCheckBox = new ActionBlock<CheckBox>(checkBox =>
+         {
+            checkBox.Checked = !checkBox.Checked;
+         }, 
+         new ExecutionDataflowBlockOptions
+         {
+            TaskScheduler = TaskScheduler.FromCurrentSynchronizationContext()  // UI 스레드에서 ActionBlock을 실행되도록 설정
+         });
 
-		 // Create a ConcurrentExclusiveSchedulerPair object. 
-		 // Readers will run on the concurrent part of the scheduler pair. 
-		 // The writer will run on the exclusive part of the scheduler pair. 
-		 var taskSchedulerPair = new ConcurrentExclusiveSchedulerPair();
+         // Create a ConcurrentExclusiveSchedulerPair object. 
+         // Readers will run on the concurrent part of the scheduler pair. 
+         // The writer will run on the exclusive part of the scheduler pair. 
+         var taskSchedulerPair = new ConcurrentExclusiveSchedulerPair();
 
-		 // Create an ActionBlock<int> object for each reader CheckBox object. 
-		 // Each ActionBlock<int> object represents an action that can read  
-		 // from a resource in parallel to other readers. 
-		 // Specifying the concurrent part of the scheduler pair enables the  
-		 // reader to run in parallel to other actions that are managed by  
-		 // that scheduler. 
-		 var readerActions = 
-			from checkBox in new CheckBox[] {checkBox1, checkBox2, checkBox3}
-			select new ActionBlock<int>(milliseconds =>
-			{
-			   // Toggle the check box to the checked state.
-			   toggleCheckBox.Post(checkBox);
+         // Create an ActionBlock<int> object for each reader CheckBox object. 
+         // Each ActionBlock<int> object represents an action that can read  
+         // from a resource in parallel to other readers. 
+         // Specifying the concurrent part of the scheduler pair enables the  
+         // reader to run in parallel to other actions that are managed by  
+         // that scheduler. 
+         var readerActions = 
+            from checkBox in new CheckBox[] {checkBox1, checkBox2, checkBox3}
+            select new ActionBlock<int>(milliseconds =>
+            {
+               // Toggle the check box to the checked state.
+               toggleCheckBox.Post(checkBox);
 
-			   // Perform the read action. For demonstration, suspend the current 
-			   // thread to simulate a lengthy read operation.
-			   Thread.Sleep(milliseconds);
+               // Perform the read action. For demonstration, suspend the current 
+               // thread to simulate a lengthy read operation.
+               Thread.Sleep(milliseconds);
 
-			   // Toggle the check box to the unchecked state.
-			   toggleCheckBox.Post(checkBox);
-			},
-			new ExecutionDataflowBlockOptions
-			{
-			   TaskScheduler = taskSchedulerPair.ConcurrentScheduler  // 현재의 스레드에서 실행되도록
-			});
+               // Toggle the check box to the unchecked state.
+               toggleCheckBox.Post(checkBox);
+            },
+            new ExecutionDataflowBlockOptions
+            {
+               TaskScheduler = taskSchedulerPair.ConcurrentScheduler  // 현재의 스레드에서 실행되도록
+            });
 
-		 // Create an ActionBlock<int> object for the writer CheckBox object. 
-		 // This ActionBlock<int> object represents an action that writes to  
-		 // a resource, but cannot run in parallel to readers. 
-		 // Specifying the exclusive part of the scheduler pair enables the  
-		 // writer to run in exclusively with respect to other actions that are  
-		 // managed by the scheduler pair. 
-		 var writerAction = new ActionBlock<int>(milliseconds =>
-		 {
-			// Toggle the check box to the checked state.
-			toggleCheckBox.Post(checkBox4);
+         // Create an ActionBlock<int> object for the writer CheckBox object. 
+         // This ActionBlock<int> object represents an action that writes to  
+         // a resource, but cannot run in parallel to readers. 
+         // Specifying the exclusive part of the scheduler pair enables the  
+         // writer to run in exclusively with respect to other actions that are  
+         // managed by the scheduler pair. 
+         var writerAction = new ActionBlock<int>(milliseconds =>
+         {
+            // Toggle the check box to the checked state.
+            toggleCheckBox.Post(checkBox4);
 
-			// Perform the write action. For demonstration, suspend the current 
-			// thread to simulate a lengthy write operation.
-			Thread.Sleep(milliseconds);
+            // Perform the write action. For demonstration, suspend the current 
+            // thread to simulate a lengthy write operation.
+            Thread.Sleep(milliseconds);
 
-			// Toggle the check box to the unchecked state.
-			toggleCheckBox.Post(checkBox4);
-		 },
-		 new ExecutionDataflowBlockOptions
-		 {
-			TaskScheduler = taskSchedulerPair.ExclusiveScheduler  // 다른 스레드에서 실행되도록 
-		 });
+            // Toggle the check box to the unchecked state.
+            toggleCheckBox.Post(checkBox4);
+         },
+         new ExecutionDataflowBlockOptions
+         {
+            TaskScheduler = taskSchedulerPair.ExclusiveScheduler  // 다른 스레드에서 실행되도록 
+         });
 
-		 // Link the broadcaster to each reader and writer block. 
-		 // The BroadcastBlock<T> class propagates values that it  
-		 // receives to all connected targets. 
-		 foreach (var readerAction in readerActions)
-		 {
-			broadcaster.LinkTo(readerAction);
-		 }
-		 broadcaster.LinkTo(writerAction);
+         // Link the broadcaster to each reader and writer block. 
+         // The BroadcastBlock<T> class propagates values that it  
+         // receives to all connected targets. 
+         foreach (var readerAction in readerActions)
+         {
+            broadcaster.LinkTo(readerAction);
+         }
+         broadcaster.LinkTo(writerAction);
 
-		 // Start the timer.
-		 timer1.Start();
-	  }
+         // Start the timer.
+         timer1.Start();
+      }
 
-	  // Event handler for the timer. 
-	  private void timer1_Tick(object sender, EventArgs e)
-	  {
-		 // Post a value to the broadcaster. The broadcaster 
-		 // sends this message to each target. 
-		 broadcaster.Post(1000);
-	  }
+      // Event handler for the timer. 
+      private void timer1_Tick(object sender, EventArgs e)
+      {
+         // Post a value to the broadcaster. The broadcaster 
+         // sends this message to each target. 
+         broadcaster.Post(1000);
+      }
    }
 }
 ```
@@ -1185,56 +1185,56 @@ namespace WriterReadersWinForms
 ```
 static TimeSpan TimeDataflowComputations(int maxDegreeOfParallelism, int messageCount)
 {
-	var workerBlock = new ActionBlock<int>(
-	   millisecondsTimeout => { Thread.Sleep(millisecondsTimeout); 
-								 Console.WriteLine("process workerBlock      : {0}.", DateTime.Now.Ticks); },
+    var workerBlock = new ActionBlock<int>(
+       millisecondsTimeout => { Thread.Sleep(millisecondsTimeout); 
+                                 Console.WriteLine("process workerBlock      : {0}.", DateTime.Now.Ticks); },
 
-	   // 몇개를 병렬로 실행할지 정한다.
-	   new ExecutionDataflowBlockOptions
-	   {
-		   MaxDegreeOfParallelism = maxDegreeOfParallelism
-	   });
+       // 몇개를 병렬로 실행할지 정한다.
+       new ExecutionDataflowBlockOptions
+       {
+           MaxDegreeOfParallelism = maxDegreeOfParallelism
+       });
 
 
-	Stopwatch stopwatch = new Stopwatch();
-	stopwatch.Start();
+    Stopwatch stopwatch = new Stopwatch();
+    stopwatch.Start();
 
-	for (int i = 0; i < messageCount; i++)
-	{
-		// 처리할 작업을 요청한다. ActionBlock을 생성할 때 인자로 넣은 함수가 실행된다.
-		Console.WriteLine("Call workerBlock.Post       : {0}.", DateTime.Now.Ticks);
-		workerBlock.Post(1000);
-	}
+    for (int i = 0; i < messageCount; i++)
+    {
+        // 처리할 작업을 요청한다. ActionBlock을 생성할 때 인자로 넣은 함수가 실행된다.
+        Console.WriteLine("Call workerBlock.Post       : {0}.", DateTime.Now.Ticks);
+        workerBlock.Post(1000);
+    }
 
-	int DelayMillisecond = 2000;
-	Console.WriteLine("딜레이 {0}밀리세컨드       : {1}.", DelayMillisecond, DateTime.Now.Ticks);
-	Thread.Sleep(DelayMillisecond);
+    int DelayMillisecond = 2000;
+    Console.WriteLine("딜레이 {0}밀리세컨드       : {1}.", DelayMillisecond, DateTime.Now.Ticks);
+    Thread.Sleep(DelayMillisecond);
 
-	// 더 이상 처리할 작업을 받지 않음을 통보
-	Console.WriteLine("Call workerBlock.Complete   : {0}.", DateTime.Now.Ticks);
-	workerBlock.Complete();
+    // 더 이상 처리할 작업을 받지 않음을 통보
+    Console.WriteLine("Call workerBlock.Complete   : {0}.", DateTime.Now.Ticks);
+    workerBlock.Complete();
 
-	// Completion 멤버는 Task를 반환한다. task가 완료될 때까지 대기한다
-	Console.WriteLine("Call workerBlock.Completion : {0}.", DateTime.Now.Ticks);
-	workerBlock.Completion.Wait();
+    // Completion 멤버는 Task를 반환한다. task가 완료될 때까지 대기한다
+    Console.WriteLine("Call workerBlock.Completion : {0}.", DateTime.Now.Ticks);
+    workerBlock.Completion.Wait();
 
-	// Stop the timer and return the elapsed number of milliseconds.
-	stopwatch.Stop();
-	return stopwatch.Elapsed;
+    // Stop the timer and return the elapsed number of milliseconds.
+    stopwatch.Stop();
+    return stopwatch.Elapsed;
 }
 
 static void Main(string[] args)
 {
-	int processorCount = Environment.ProcessorCount;
-	int messageCount = processorCount;
+    int processorCount = Environment.ProcessorCount;
+    int messageCount = processorCount;
 
-	Console.WriteLine("Processor count = {0}.", processorCount);
+    Console.WriteLine("Processor count = {0}.", processorCount);
 
-	TimeSpan elapsed;
+    TimeSpan elapsed;
 
-	elapsed = TimeDataflowComputations(1, messageCount);
-	Console.WriteLine("Degree of parallelism = {0}; message count = {1}; " +
-	   "elapsed time = {2}ms.", 1, messageCount, (int)elapsed.TotalMilliseconds);
+    elapsed = TimeDataflowComputations(1, messageCount);
+    Console.WriteLine("Degree of parallelism = {0}; message count = {1}; " +
+       "elapsed time = {2}ms.", 1, messageCount, (int)elapsed.TotalMilliseconds);
 }
 ```
   
@@ -1244,79 +1244,79 @@ static void Main(string[] args)
 ```
 static TimeSpan TimeDataflowComputations(int maxDegreeOfParallelism, int messageCount)
 {
-	var workerBlock = new ActionBlock<int>(
-	   millisecondsTimeout => { Thread.Sleep(millisecondsTimeout); 
-								 Console.WriteLine("process workerBlock      : {0}.", DateTime.Now.Ticks); },
+    var workerBlock = new ActionBlock<int>(
+       millisecondsTimeout => { Thread.Sleep(millisecondsTimeout); 
+                                 Console.WriteLine("process workerBlock      : {0}.", DateTime.Now.Ticks); },
 
-	   // 몇개를 병렬로 실행할지 정한다.
-	   new ExecutionDataflowBlockOptions
-	   {
-		   MaxDegreeOfParallelism = maxDegreeOfParallelism
-	   });
-
-
-	Stopwatch stopwatch = new Stopwatch();
-	stopwatch.Start();
-
-	for (int i = 0; i < messageCount; i++)
-	{
-		var bResult = workerBlock.Post(1000);
-		Console.WriteLine("Call workerBlock.Post       : {0}, Result:{1}", DateTime.Now.Ticks, bResult);
-	}
-
-	int DelayMillisecond = 2000;
-	Console.WriteLine("딜레이 {0}밀리세컨드       : {1}.", DelayMillisecond, DateTime.Now.Ticks);
-	Thread.Sleep(DelayMillisecond);
-
-	// 더 이상 처리할 작업을 받지 않음을 통보
-	Console.WriteLine("Call workerBlock.Complete   : {0}.", DateTime.Now.Ticks);
-	workerBlock.Complete();
-
-	// Completion 멤버는 Task를 반환한다. task가 완료될 때까지 대기한다
-	Console.WriteLine("Call workerBlock.Completion : {0}.", DateTime.Now.Ticks);
-	workerBlock.Completion.Wait();
-	Console.WriteLine("End workerBlock.Completion : {0}.", DateTime.Now.Ticks);
+       // 몇개를 병렬로 실행할지 정한다.
+       new ExecutionDataflowBlockOptions
+       {
+           MaxDegreeOfParallelism = maxDegreeOfParallelism
+       });
 
 
-	// 다시 한번 더
-	Console.WriteLine("");
-	Console.WriteLine("다시 한번 더 !!!       : {0}.", DateTime.Now.Ticks);
+    Stopwatch stopwatch = new Stopwatch();
+    stopwatch.Start();
 
-	for (int i = 0; i < messageCount; i++)
-	{
-		var bResult = workerBlock.Post(1000);
-		Console.WriteLine("Call workerBlock.Post       : {0}, Result:{1}", DateTime.Now.Ticks, bResult);
-	}
+    for (int i = 0; i < messageCount; i++)
+    {
+        var bResult = workerBlock.Post(1000);
+        Console.WriteLine("Call workerBlock.Post       : {0}, Result:{1}", DateTime.Now.Ticks, bResult);
+    }
 
-	DelayMillisecond = 2000;
-	Console.WriteLine("딜레이 {0}밀리세컨드       : {1}.", DelayMillisecond, DateTime.Now.Ticks);
-	Thread.Sleep(DelayMillisecond);
+    int DelayMillisecond = 2000;
+    Console.WriteLine("딜레이 {0}밀리세컨드       : {1}.", DelayMillisecond, DateTime.Now.Ticks);
+    Thread.Sleep(DelayMillisecond);
 
-	// 더 이상 처리할 작업을 받지 않음을 통보
-	Console.WriteLine("Call workerBlock.Complete   : {0}.", DateTime.Now.Ticks);
-	workerBlock.Complete();
+    // 더 이상 처리할 작업을 받지 않음을 통보
+    Console.WriteLine("Call workerBlock.Complete   : {0}.", DateTime.Now.Ticks);
+    workerBlock.Complete();
 
-	// Completion 멤버는 Task를 반환한다. task가 완료될 때까지 대기한다
-	Console.WriteLine("Call workerBlock.Completion : {0}.", DateTime.Now.Ticks);
-	workerBlock.Completion.Wait();
-	Console.WriteLine("End workerBlock.Completion : {0}.", DateTime.Now.Ticks);
+    // Completion 멤버는 Task를 반환한다. task가 완료될 때까지 대기한다
+    Console.WriteLine("Call workerBlock.Completion : {0}.", DateTime.Now.Ticks);
+    workerBlock.Completion.Wait();
+    Console.WriteLine("End workerBlock.Completion : {0}.", DateTime.Now.Ticks);
 
-	stopwatch.Stop();
-	return stopwatch.Elapsed;
+
+    // 다시 한번 더
+    Console.WriteLine("");
+    Console.WriteLine("다시 한번 더 !!!       : {0}.", DateTime.Now.Ticks);
+
+    for (int i = 0; i < messageCount; i++)
+    {
+        var bResult = workerBlock.Post(1000);
+        Console.WriteLine("Call workerBlock.Post       : {0}, Result:{1}", DateTime.Now.Ticks, bResult);
+    }
+
+    DelayMillisecond = 2000;
+    Console.WriteLine("딜레이 {0}밀리세컨드       : {1}.", DelayMillisecond, DateTime.Now.Ticks);
+    Thread.Sleep(DelayMillisecond);
+
+    // 더 이상 처리할 작업을 받지 않음을 통보
+    Console.WriteLine("Call workerBlock.Complete   : {0}.", DateTime.Now.Ticks);
+    workerBlock.Complete();
+
+    // Completion 멤버는 Task를 반환한다. task가 완료될 때까지 대기한다
+    Console.WriteLine("Call workerBlock.Completion : {0}.", DateTime.Now.Ticks);
+    workerBlock.Completion.Wait();
+    Console.WriteLine("End workerBlock.Completion : {0}.", DateTime.Now.Ticks);
+
+    stopwatch.Stop();
+    return stopwatch.Elapsed;
 }
 
 static void Main(string[] args)
 {
-	int processorCount = Environment.ProcessorCount;
-	int messageCount = processorCount;
+    int processorCount = Environment.ProcessorCount;
+    int messageCount = processorCount;
 
-	Console.WriteLine("Processor count = {0}.", processorCount);
+    Console.WriteLine("Processor count = {0}.", processorCount);
 
-	TimeSpan elapsed;
+    TimeSpan elapsed;
 
-	elapsed = TimeDataflowComputations(1, messageCount);
-	Console.WriteLine("Degree of parallelism = {0}; message count = {1}; " +
-	   "elapsed time = {2}ms.", 1, messageCount, (int)elapsed.TotalMilliseconds);
+    elapsed = TimeDataflowComputations(1, messageCount);
+    Console.WriteLine("Degree of parallelism = {0}; message count = {1}; " +
+       "elapsed time = {2}ms.", 1, messageCount, (int)elapsed.TotalMilliseconds);
 }
 ```
   
