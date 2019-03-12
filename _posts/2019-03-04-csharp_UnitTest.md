@@ -3,7 +3,7 @@ layout: post
 title: C# - Unit Test
 published: true
 categories: [.NET]
-tags: c# net unittest 유닛테스트
+tags: c# .net unittest 유닛테스트
 ---
 ### 준비
 - 보통 프로그램이나 라이브러리 프로젝트에 추가 프로젝트로 유닛테스트 프레임워크를 사용하는 프로젝트를 만든다.

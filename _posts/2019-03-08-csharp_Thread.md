@@ -3,7 +3,7 @@ layout: post
 title: C# - Thread
 published: true
 categories: [.NET]
-tags: c# net Thread
+tags: c# .net Thread
 ---
 ## 현재 스레드의 ID 얻기
   

@@ -3,7 +3,7 @@ layout: post
 title: C# - Dataflow
 published: true
 categories: [.NET]
-tags: c# net Dataflow thread tpl
+tags: c# .net Dataflow thread tpl
 ---
 - 닷넷프레임워크 4.5에 추가 
 - NuGet으로 입수 가능 https://www.nuget.org/packages/Microsoft.Tpl.Dataflow 

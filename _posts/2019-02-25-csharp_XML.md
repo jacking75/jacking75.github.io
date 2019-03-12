@@ -3,7 +3,7 @@ layout: post
 title: C# - XmlTextReader
 published: true
 categories: [.NET]
-tags: c# net XmlTextReader xml
+tags: c# .net XmlTextReader xml
 ---
 ## XmlTextReader 로 XML 읽기
 - 예제 1

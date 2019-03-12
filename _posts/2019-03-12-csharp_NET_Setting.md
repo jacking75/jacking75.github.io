@@ -3,7 +3,7 @@ layout: post
 title: C# - http 요청 시 동시 접속 수 제한
 published: true
 categories: [.NET]
-tags: c# net
+tags: c# .net
 ---
 - 닷넷프레임워크는 서버로의 동시 접속 수가 기본으로 최대 2로 제한 되어 있다
     - 즉 클라이언트는 한 서버로 머신당 최대 동시 접속 수가 2개로 제한

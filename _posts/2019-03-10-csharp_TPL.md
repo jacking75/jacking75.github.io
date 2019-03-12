@@ -3,7 +3,7 @@ layout: post
 title: C# - TPL
 published: true
 categories: [.NET]
-tags: c# net tpl task thread
+tags: c# .net tpl task thread
 ---
 닷넷 프레임워크 4.0에서 추가된 병렬 프로그래밍 라이브러리  
 [여기의 글](http://xin9le.net/tpl-intro )을 정리  

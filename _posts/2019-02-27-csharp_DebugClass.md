@@ -3,7 +3,7 @@ layout: post
 title: C# - Debug 클래스
 published: true
 categories: [.NET]
-tags: c# net Debug
+tags: c# .net Debug
 ---
 ## Debug 클래스
 - Debug 클래스는 그 이름대로 디버그 정보를 출력하는 클래스이다.

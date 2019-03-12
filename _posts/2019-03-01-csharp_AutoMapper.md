@@ -3,7 +3,7 @@ layout: post
 title: C# - AutoMapper
 published: true
 categories: [.NET]
-tags: c# net AutoMapper
+tags: c# .net AutoMapper
 ---
 ## 기본
 - 객체간의 복사를 자동으로 한다. 복사되는 객체에 복사한다.

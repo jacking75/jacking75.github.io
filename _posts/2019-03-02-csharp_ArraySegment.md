@@ -3,7 +3,7 @@ layout: post
 title: C# - ArraySegment 배열을 새로 할당하지 않고 특정 위치의 내용을 참고 하고 싶을 때
 published: true
 categories: [.NET]
-tags: c# net ArraySegment
+tags: c# .net ArraySegment
 ---
 - 배열(예를들면 네트워크에서 받은 데이터를 저장한 버퍼 byte[] buffer)의 특정 위치에서 특정 크기만큼 참고하고 싶을 때 보통 새로 배열을 만든 후 복사해야 원하는 데이터만을 참조할 수 있다.
 - 그러나 ArraySegment를 사용하면 새로 배열을 만들지 않으면서 버퍼의 특정 데이터를 참조할 수 있다.

@@ -3,7 +3,7 @@ layout: post
 title: C# - 콘솔 키보드 입력, 프로그램 종료 키 조사
 published: true
 categories: [.NET]
-tags: c# net 키보드 keyboard 콘솔 console
+tags: c# .net 키보드 keyboard 콘솔 console
 ---
 ## 키보드 입력
   

@@ -3,7 +3,7 @@ layout: post
 title: C# - Trace
 published: true
 categories: [.NET]
-tags: c# net trace
+tags: c# .net trace
 ---
 ## Trace 클래스
 - 코드 실행을 추적하는 데 필요한 메서드 및 속성 집합을 제공

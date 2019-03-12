@@ -3,7 +3,7 @@ layout: post
 title: C# - Http Request
 published: true
 categories: [.NET]
-tags: c# net HttpWebRequest
+tags: c# .net HttpWebRequest
 ---
 - 닷넷프레임워크에서는 서버로의 동시 접속수가 기본으로 최대 2로 제한되어 있다. 이 때문에 웹서비스 클라이언트에서 웹 서비스등을 호출할 때 처리량을 올리가 위해서는 멀티스레드에서 웹서비스를 호출하여도 액티브한 최대 동시 접속 수는 2로 된다.
 - 싱글 스레드로 통신 할 때와 비교하면 처리량(시간당 처리량)은 향상 되지만 처리 스레드 수를 늘려도 바로 그 결과을 얻을 수 없다.

@@ -3,7 +3,7 @@ layout: post
 title: C# - 닷넷프레임워크의 타이머 관련 클래스
 published: true
 categories: [.NET]
-tags: c# net DispatcherTimer
+tags: c# .net DispatcherTimer
 ---
 인터넷에 있는 글에서 가져온 것입니다.  
   

@@ -3,7 +3,7 @@ layout: post
 title: C# - List, Tuple, Queue, SortedList, SortedDictionary, SortedSet
 published: true
 categories: [.NET]
-tags: c# net Tuple Queue SortedList SortedDictionary SortedSet
+tags: c# .net Tuple Queue SortedList SortedDictionary SortedSet
 ---
 ### List
 #### 정렬
