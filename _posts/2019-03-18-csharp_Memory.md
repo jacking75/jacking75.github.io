@@ -1,6 +1,6 @@
 ---
 layout: post
-title: C# - XmlTextReader
+title: C# - 메모리
 published: true
 categories: [.NET]
 tags: c# .net stackalloc memory gc
