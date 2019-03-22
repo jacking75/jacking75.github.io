@@ -1,6 +1,6 @@
 ---
 layout: post
-title: C# - XmlTextReader
+title: C# - 날짜와 시간
 published: true
 categories: [.NET]
 tags: c# .net DateTime
