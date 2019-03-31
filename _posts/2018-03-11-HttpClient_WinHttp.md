@@ -45,7 +45,7 @@ WinHttpOpenRequest 함수는 요구의 일부로서 송신하는 RFC822, MIME �
   
   
 ### WinHttpSendRequest
-
+  
 ``` 
 WCHAR szHeader[] = L"Content-Type: application/x-www-form-urlencoded\r\n";
 CHAR  szData[] = "msg=abc";
@@ -68,9 +68,9 @@ WinHttpSendRequest(hRequest, szHeader, dwHeaderLength, szData, dwDataLength, dwD
   
 ```
 BOOL WINAPI WinHttpWriteData( HINTERNET hRequest, 
-					LPCVOID lpBuffer, 
-					DWORD dwNumberOfBytesToWrite, 
-					LPDWORD lpdwNumberOfBytesWritten);
+                    LPCVOID lpBuffer, 
+                    DWORD dwNumberOfBytesToWrite, 
+                    LPDWORD lpdwNumberOfBytesWritten);
 ```
 hRequest는 리퀘스트 핸들을 지정한다.  
 lpBuffer는 발송하고자 하는 데이터를 저장한 버퍼를 지정한다.  
@@ -96,13 +96,13 @@ WinHttpQueryHeaders에서는 제2 인수에 WINHTTP_QUERY_STATUS_CODE을 지정�
 dwSize = sizeof(DWORD);
 WinHttpQueryHeaders(hRequest, WINHTTP_QUERY_STATUS_CODE | WINHTTP_QUERY_FLAG_NUMBER, WINHTTP_HEADER_NAME_BY_INDEX, &dwStatusCode, &dwSize, WINHTTP_NO_HEADER_INDEX);
 if (dwStatusCode == HTTP_STATUS_OK) {
-	WinHttpReadData(hRequest, buffer, sizeof(buffer), NULL);
-	MessageBoxA(NULL, (LPSTR)buffer, "ボディ", MB_OK);
+    WinHttpReadData(hRequest, buffer, sizeof(buffer), NULL);
+    MessageBoxA(NULL, (LPSTR)buffer, "ボディ", MB_OK);
 }
 else {
-	TCHAR szBuf[256];
-	wsprintf(szBuf, TEXT("Status Code %d"), dwStatusCode);
-	MessageBox(NULL, szBuf, NULL, MB_ICONWARNING);
+    TCHAR szBuf[256];
+    wsprintf(szBuf, TEXT("Status Code %d"), dwStatusCode);
+    MessageBox(NULL, szBuf, NULL, MB_ICONWARNING);
 }
 ```
 제2 인수에 WINHTTP_QUERY_FLAG_NUMBER를 지정하고 있는 점도 중요하다.  
