@@ -203,16 +203,20 @@ Log.Information("Retrieved {Count} records", count);
 ```
 var fruit = new[] { "Apple", "Pear", "Orange" };
 Log.Information("In my bowl I have {Fruit}", fruit);
-
-//{ "Fruit": ["Apple", "Pear", "Orange"] }
 ```
+  
+<pre>
+{ "Fruit": ["Apple", "Pear", "Orange"] }
+</pre>
   
 ```
 var fruit = new Dictionary<string,int> {{ "Apple", 1}, { "Pear", 5 }};
 Log.Information("In my bowl I have {Fruit}", fruit);
-
-//{ "Fruit": { "Apple": 1, "Pear": 5 }}
 ```
+  
+<pre>
+{ "Fruit": { "Apple": 1, "Pear": 5 }}
+</pre>
   
 - Objects
   
@@ -239,11 +243,13 @@ var log = new LoggerConfiguration()
 ```
   
 - default로 로그 파일의 크기는 1GB. 변경도 가능.
+  
 ```
 .WriteTo.RollingFile("log-{Date}.txt", fileSizeLimitBytes: null)
 ```
   
 - 이미 만들어진 로그 파일은 default로 31개까지만 저장. 변경 가능
+  
 ```
 .WriteTo.RollingFile("log-{Date}.txt", retainedFileCountLimit: null)
 ```
