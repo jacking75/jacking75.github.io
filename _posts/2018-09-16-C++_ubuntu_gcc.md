@@ -3,7 +3,7 @@ layout: post
 title: C++ - Ubuntu 18 에서 g++(gcc) 설치
 published: true
 categories: [C++]
-tags: c++ g++ gcc Ubuntu Ubuntu18
+tags: c++ g++ gcc Ubuntu Ubuntu18 linux
 ---
 출처: https://linuxconfig.org/how-to-install-g-the-c-compiler-on-ubuntu-18-04-bionic-beaver-linux  
 
