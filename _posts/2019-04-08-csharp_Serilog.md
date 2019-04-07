@@ -209,15 +209,6 @@ Log.Information("In my bowl I have {Fruit}", fruit);
 { "Fruit": ["Apple", "Pear", "Orange"] }
 </pre>
   
-```
-var fruit = new Dictionary<string,int> {{ "Apple", 1}, { "Pear", 5 }};
-Log.Information("In my bowl I have {Fruit}", fruit);
-```
-  
-<pre>
-{ "Fruit": { "Apple": 1, "Pear": 5 }}
-</pre>
-  
 - Objects
   
 ```
