@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linux - 리눅스 profile, bashrc 와 login shell vs non-login shell 의 이해
+title: Linux - 리눅스 profile, bashrc 와 login shell vs non-login shell 이해
 published: true
 categories: [OS]
 tags: Linux OS shell bashrc bashrc
