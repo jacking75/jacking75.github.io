@@ -23,39 +23,39 @@ namespace rapid {
 namespace platform {
 
 struct ProcessorInformation {
-	ProcessorInformation()
-		: numaNodeCount(0)
-		, processorCoreCount(0)
-		, logicalProcessorCount(0)
-		, processorL1CacheCount(0)
-		, processorL2CacheCount(0)
-		, processorL3CacheCount(0)
-		, processorPackageCount(0) {
-	}
+    ProcessorInformation()
+        : numaNodeCount(0)
+        , processorCoreCount(0)
+        , logicalProcessorCount(0)
+        , processorL1CacheCount(0)
+        , processorL2CacheCount(0)
+        , processorL3CacheCount(0)
+        , processorPackageCount(0) {
+    }
 
-	friend std::ostream& operator<< (std::ostream& ostr, ProcessorInformation const &info);
+    friend std::ostream& operator<< (std::ostream& ostr, ProcessorInformation const &info);
 
-	uint32_t numaNodeCount;
-	uint32_t processorCoreCount;
-	uint32_t logicalProcessorCount;
-	uint32_t processorL1CacheCount;
-	uint32_t processorL2CacheCount;
-	uint32_t processorL3CacheCount;
-	uint32_t processorPackageCount;
+    uint32_t numaNodeCount;
+    uint32_t processorCoreCount;
+    uint32_t logicalProcessorCount;
+    uint32_t processorL1CacheCount;
+    uint32_t processorL2CacheCount;
+    uint32_t processorL3CacheCount;
+    uint32_t processorPackageCount;
 };
 
 struct NumaProcessor {
-	NumaProcessor()
-		: processor(0)
-		, node(0)
-		, processorMask(0) {
-	}
+    NumaProcessor()
+        : processor(0)
+        , node(0)
+        , processorMask(0) {
+    }
 
-	friend std::ostream& operator<< (std::ostream& ostr, std::vector<NumaProcessor> const &numaProcessors);
+    friend std::ostream& operator<< (std::ostream& ostr, std::vector<NumaProcessor> const &numaProcessors);
 
-	uint8_t processor;
-	uint8_t node;
-	uint64_t processorMask;
+    uint8_t processor;
+    uint8_t node;
+    uint64_t processorMask;
 };
 
 class SystemInfo : public utils::Singleton<SystemInfo> {
@@ -68,9 +68,9 @@ public:
 
     uint32_t getPageSize() const noexcept;
 
-	uint32_t getPageBoundarySize() const noexcept;
+    uint32_t getPageBoundarySize() const noexcept;
 
-	uint32_t roundUpToPageSize(uint32_t size) const noexcept;
+    uint32_t roundUpToPageSize(uint32_t size) const noexcept;
 
     bool isNumaSystem();
 
@@ -131,21 +131,21 @@ namespace platform {
 
 struct SocketInitializer {
     SocketInitializer() noexcept {
-		auto retval = ::WSAStartup(MAKEWORD(2, 2), &wsadata_);
+        auto retval = ::WSAStartup(MAKEWORD(2, 2), &wsadata_);
         if (retval != ERROR_SUCCESS) {
-			lastError_ = ::WSAGetLastError();
+            lastError_ = ::WSAGetLastError();
         } else {
-			lastError_ = ERROR_SUCCESS;
+            lastError_ = ERROR_SUCCESS;
         }
     }
 
     ~SocketInitializer() noexcept {
-		if (lastError_ == ERROR_SUCCESS) {
+        if (lastError_ == ERROR_SUCCESS) {
             ::WSACleanup();
         }
     }
 
-    WSADATA	wsadata_;
+    WSADATA    wsadata_;
     uint32_t lastError_;
 };
 
@@ -161,7 +161,7 @@ public:
 
     size_t getPageBoundarySize() const noexcept;
 
-	uint32_t roundUpToPageSize(uint32_t size) const noexcept;
+    uint32_t roundUpToPageSize(uint32_t size) const noexcept;
 
     bool isNumaSystem();
 
@@ -381,24 +381,24 @@ std::wstring getApplicationFilePath() {
 }
 
 std::wstring getApplicationFileName() {
-	wchar_t drive[MAX_PATH];
-	wchar_t dir[MAX_PATH];
-	wchar_t filename[MAX_PATH];
-	wchar_t ext[MAX_PATH];
-	wchar_t exe_filename[MAX_PATH];
+    wchar_t drive[MAX_PATH];
+    wchar_t dir[MAX_PATH];
+    wchar_t filename[MAX_PATH];
+    wchar_t ext[MAX_PATH];
+    wchar_t exe_filename[MAX_PATH];
 
-	auto filePath = getApplicationFilePath();
-	::_wsplitpath_s(filePath.c_str(),
-		drive,
-		MAX_PATH,
-		dir,
-		MAX_PATH,
-		filename,
-		MAX_PATH,
-		ext,
-		MAX_PATH);
-	::_wmakepath_s(exe_filename, MAX_PATH, nullptr, nullptr, filename, ext);
-	return filename;
+    auto filePath = getApplicationFilePath();
+    ::_wsplitpath_s(filePath.c_str(),
+        drive,
+        MAX_PATH,
+        dir,
+        MAX_PATH,
+        filename,
+        MAX_PATH,
+        ext,
+        MAX_PATH);
+    ::_wmakepath_s(exe_filename, MAX_PATH, nullptr, nullptr, filename, ext);
+    return filename;
 }
 
 std::string getFinalPathNameByHandle(HANDLE fileHandle) {
@@ -415,38 +415,38 @@ void setProcessPriorityBoost(bool enableBoost) {
 }
 
 void prefetchVirtualMemory(char const * virtualAddress, size_t size) {
-	// TODO: Windows 2008 not support!
-	WIN32_MEMORY_RANGE_ENTRY entry;
-	entry.VirtualAddress = const_cast<void*>(reinterpret_cast<const void*>(virtualAddress));
-	entry.NumberOfBytes = size;
+    // TODO: Windows 2008 not support!
+    WIN32_MEMORY_RANGE_ENTRY entry;
+    entry.VirtualAddress = const_cast<void*>(reinterpret_cast<const void*>(virtualAddress));
+    entry.NumberOfBytes = size;
 
-	if (!::PrefetchVirtualMemory(::GetCurrentProcess(), 1, &entry, 0)) {
-		throw rapid::Exception();
-	}
+    if (!::PrefetchVirtualMemory(::GetCurrentProcess(), 1, &entry, 0)) {
+        throw rapid::Exception();
+    }
 }
 
 std::vector<std::string> getNetworkInterfaceNameList() {
-	std::vector<std::string> interfaceList;
-	std::vector<char> buffer;
-	
-	PIP_ADAPTER_INFO pInterfaceInfo = nullptr;
-	DWORD interfaceInfoSize = 0;
-	auto ret = ::GetAdaptersInfo(nullptr, &interfaceInfoSize);
-	if (ret == ERROR_BUFFER_OVERFLOW) {
-		buffer.resize(interfaceInfoSize);
-		pInterfaceInfo = reinterpret_cast<PIP_ADAPTER_INFO>(buffer.data());
-	} else {
-		throw Exception();
-	}
+    std::vector<std::string> interfaceList;
+    std::vector<char> buffer;
+    
+    PIP_ADAPTER_INFO pInterfaceInfo = nullptr;
+    DWORD interfaceInfoSize = 0;
+    auto ret = ::GetAdaptersInfo(nullptr, &interfaceInfoSize);
+    if (ret == ERROR_BUFFER_OVERFLOW) {
+        buffer.resize(interfaceInfoSize);
+        pInterfaceInfo = reinterpret_cast<PIP_ADAPTER_INFO>(buffer.data());
+    } else {
+        throw Exception();
+    }
 
-	ret = ::GetAdaptersInfo(pInterfaceInfo, &interfaceInfoSize);
-	if (ret == NO_ERROR) {
-		while (pInterfaceInfo) {
-			interfaceList.emplace_back(pInterfaceInfo->Description);
-			pInterfaceInfo = pInterfaceInfo->Next;
-		}
-	}
-	return interfaceList;
+    ret = ::GetAdaptersInfo(pInterfaceInfo, &interfaceInfoSize);
+    if (ret == NO_ERROR) {
+        while (pInterfaceInfo) {
+            interfaceList.emplace_back(pInterfaceInfo->Description);
+            pInterfaceInfo = pInterfaceInfo->Next;
+        }
+    }
+    return interfaceList;
 }
 
 }
