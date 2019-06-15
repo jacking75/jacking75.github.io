@@ -1,9 +1,9 @@
 ---
 layout: post
-title: C# - SuperSocket으로 게임 서버 만들기 - 01
+title: C# - SuperSocketLite으로 게임 서버 만들기 - 01
 published: true
 categories: [.NET]
-tags: c# .NETCore SuperSocket socket tcp gameserver network
+tags: c# .NETCore SuperSocket SuperSocketLite socket tcp gameserver network
 ---
 C#에서 가장 유명한 네트워크 라이브러리로 SuperSocket 이라는 것이 있다.  
 앞으로 여러 번을 나누어서 SuperSocket을 사용하여 게임 서버를 만드는 방법을 설명하려고 한다.  
