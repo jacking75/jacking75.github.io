@@ -45,7 +45,7 @@ SuperSocketLite 저장소의 /Docs/SuperSocket-1_6-Doc/  디렉토리에 원본 
 - SimpleUDPServer
     - UDP를 사용하는 서버
 - SwitchReceiveFilter
-    - SuperSocket으 내장 프로토콜을 실행 중 변경하는 서버
+    - SuperSocket의 내장 프로토콜을 실행 중 변경하는 서버
 - sendFailTestServer
     - 클라이언트가 Receive를 하지 않을 때 서버에서 Send 오류를 잘 처리하는지 테스트 하는 서버
 - Chat
