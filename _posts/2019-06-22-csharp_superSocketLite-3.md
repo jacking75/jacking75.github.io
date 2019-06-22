@@ -1,6 +1,6 @@
 ---
 layout: post
-title: C# - SuperSocketLite으로 게임 서버 만들기 - 02) 에코 서버 2
+title: C# - SuperSocketLite으로 게임 서버 만들기 - 03) 에코 서버 2
 published: true
 categories: [.NET]
 tags: c# .NETCore SuperSocket SuperSocketLite socket tcp gameserver network
