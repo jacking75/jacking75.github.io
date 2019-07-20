@@ -8,7 +8,7 @@ tags: c++ socket linux sigpipe
 [출처](http://doi-t.hatenablog.com/entry/2014/06/10/033309 )  
   
 연결이 끊어진 소켓에 쓰기(send(2) 혹은 write(2) 같은 것)를 하면 SIGPIPE 시그널이 발생하고 프로세스가 종료하기 때문에 제대로 SIGPIPE 시그널을 핸들링 해 두자는 이야기 이다.  
-  
+(Windows OS에서는 상관 없는 이야기이다)  
   
 ## SISGPIPE를 받은 프로세스의 행동과 소켓 프로그래밍에서의 대응책
 "sigpipe"로 검색하면 같은 이야기는 얼마든지 글이 있다. 예를 들면,  
@@ -55,7 +55,7 @@ sender.sh는 대상 프로세스가 죽기 때문에 SIGPIPE 시그널이 발생
 아무튼 가장 큰 교훈은 다른 방식의 디버깅 방법을 항상 복수 소지 해두자 라는 것 같은 생각이 든다.  
   
   
-추가(최흥배)  
+**추가(최흥배)  **
 C++ 오픈 소스 라이브러리 Poco를 보면 위의 문제는 Unix 계열에서만 발생하는 문제이고, Linux에서는 발생하지 않는다고 한다.
 ![](/images/2019/select_sigpipe03.png)  
   
