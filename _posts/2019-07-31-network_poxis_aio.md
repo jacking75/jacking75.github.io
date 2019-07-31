@@ -6,7 +6,7 @@ categories: [C++]
 tags: c++ posix aio linux network
 ---
 posix의 비동기 IO의 API인 aio는 파일 조작만 지원하는 걸로 알고 있었는데 소켓 조작에도 사용할 수 있다고 한다.  
-http://koyo.kr/46  
+https://koyo.kr/post/posix-aio-socket-server-example/  
   
 그런데 리눅스쪽 서버 개발 관련해서 자료를 찾을 때 소켓 통신으로 aio를 사용하는 것을 본적이 없다.  
 (boost.asio나 node.js의 libuv도 사용하지 않고 있다)  
