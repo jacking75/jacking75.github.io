@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 신인 프로그래머가 알아야 할 프로그래밍의 원칙 6개
+title: 신인 프로그래머가 알아야 할 프로그래밍의 원칙 5개
 published: true
 categories: [ETC]
 tags: etc newbie programmer
