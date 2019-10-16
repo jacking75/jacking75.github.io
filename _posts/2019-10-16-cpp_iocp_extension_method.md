@@ -46,5 +46,6 @@ AcceptEx(sListenSocket,
             lpdwBytesReceived, 
             lpOverlapped);
 ```  
-
-
+  
+[MS Docs의 IOCP 설명](https://docs.microsoft.com/ko-kr/windows/win32/fileio/i-o-completion-ports/?WT.mc_id=DT-MVP-4024485 )  
+[MS Docs의 AcceptEx 설명](https://docs.microsoft.com/ko-kr/windows/win32/api/mswsock/nf-mswsock-acceptex/?WT.mc_id=DT-MVP-4024485 )  
