@@ -69,3 +69,9 @@ if( NULL == hIOCP  || m_hIOCP != hIOCP )
     return false;
 }
 ```
+  
+  
+  
+[MS Docs의 CreateIoCompletionPort](https://docs.microsoft.com/ko-kr/windows/win32/fileio/createiocompletionport/?WT.mc_id=DT-MVP-4024485 )  
+[MS Docs의 GetQueuedCompletionStatus](https://docs.microsoft.com/ko-kr/windows/win32/api/ioapiset/nf-ioapiset-getqueuedcompletionstatus/?WT.mc_id=DT-MVP-4024485 )  
+ GetQueuedCompletionStatus 함수의 새 버전은 [GetQueuedCompletionStatusEx](https://docs.microsoft.com/ko-kr/windows/win32/fileio/getqueuedcompletionstatusex-func/?WT.mc_id=DT-MVP-4024485 ) 이다.  
