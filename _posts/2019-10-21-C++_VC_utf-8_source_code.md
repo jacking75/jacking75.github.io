@@ -5,8 +5,8 @@ published: true
 categories: [C++]
 tags: c++ g++ gcc Ubuntu Ubuntu18
 ---
-출처: https://qiita.com/moutend/items/601ca163ecece7c4afeb  
-
+[출처](https://qiita.com/moutend/items/601ca163ecece7c4afeb )  
+  
 ## 전제
 최신 msbuild가 필요하다. VisualStudio 2017 Community Edition을 설치하면 자동으로 설치 될 것이다.  
 경로가 통하지 않는 경우 다음 명령을 실행 msbuild을 사용할 수 있게하자.  
