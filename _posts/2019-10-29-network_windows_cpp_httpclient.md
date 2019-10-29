@@ -7,15 +7,8 @@ tags: cpp network win32 http httpclient
 ---
 일어로 된 문서는 번역기로 돌려서 보는 것을 추천한다.  
   
-- (일어)Http 프로그래밍 
-    - [1](http://bg1.hatenablog.com/entry/2015/12/16/210000  )
-    - [2](http://bg1.hatenablog.com/entry/2015/12/17/210000 )
-    - [3](http://bg1.hatenablog.com/entry/2015/12/18/210000 )
-    - [4](http://bg1.hatenablog.com/entry/2015/12/19/050000 )
-    - [5](http://bg1.hatenablog.com/entry/2015/12/20/235852 )
-    - [6](http://bg1.hatenablog.com/entry/2015/12/21/050000 )
-  
-- (일어)XMLHttpRequest를 VC++에서 사용하는 예](http://dev.activebasic.com/egtra/2016/07/09/894/  )
+- (일어)Http 프로그래밍 [1](http://bg1.hatenablog.com/entry/2015/12/16/210000  ), [2](http://bg1.hatenablog.com/entry/2015/12/17/210000 ), [3](http://bg1.hatenablog.com/entry/2015/12/18/210000 ), [4](http://bg1.hatenablog.com/entry/2015/12/19/050000 ), [5](http://bg1.hatenablog.com/entry/2015/12/20/235852 ),  [6](http://bg1.hatenablog.com/entry/2015/12/21/050000 )  
+- (일어)[XMLHttpRequest를 VC++에서 사용하는 예](http://dev.activebasic.com/egtra/2016/07/09/894/  )
   
   
 ## WinHttp
