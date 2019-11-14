@@ -5,5 +5,5 @@ published: true
 categories: [Rust]
 tags: rust install windows10 windows
 ---
-<iframe width="1024" height="768" src="https://docs.google.com/document/d/e/2PACX-1vQpp4btCTZogjWX1jqdcxKd7ixdzMIWkrrdQ63tDgXtDFDQ--jitMg3Jyx_i2vM2h-81eC7Ki2MDdf9/pub?embedded=true"></iframe>
+<iframe width="800" height="900" src="https://docs.google.com/document/d/e/2PACX-1vQpp4btCTZogjWX1jqdcxKd7ixdzMIWkrrdQ63tDgXtDFDQ--jitMg3Jyx_i2vM2h-81eC7Ki2MDdf9/pub?embedded=true"></iframe>
   
