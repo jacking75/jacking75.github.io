@@ -5,7 +5,10 @@ published: true
 categories: [C++]
 tags: c++ c++17 검색 search Boyer-Moore Boyer-Moore-Horspool
 ---
-헤더 파일은 <functional>  
+헤더 파일은  
+```
+#include <functional>
+```  
   
   
 ## Boyer-Moore
@@ -24,7 +27,7 @@ template< class RandomIt2 >
 std::pair<RandomIt2,RandomIt2> operator()( RandomIt2 first, RandomIt2 last ) const;
 ```
   
-출처: https://en.cppreference.com/w/cpp/utility/functional/boyer_moore_searcher
+[출처](https://en.cppreference.com/w/cpp/utility/functional/boyer_moore_searcher )  
 ```
 #include <iostream>
 #include <string>
@@ -69,7 +72,7 @@ template< class RandomIt2 >
 std::pair<RandomIt2,RandomIt2> operator()( RandomIt2 first, RandomIt2 last )
 ```
   
-출처: https://en.cppreference.com/w/cpp/utility/functional/boyer_moore_horspool_searcher  
+[출처](https://en.cppreference.com/w/cpp/utility/functional/boyer_moore_horspool_searcher )   
 ```
 #include <iostream>
 #include <string>
