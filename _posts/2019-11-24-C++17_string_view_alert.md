@@ -1,9 +1,9 @@
 ---
 layout: post
-title: C++17 - sttring_view의 주의점
+title: C++17 - string_view의 주의점
 published: true
 categories: [C++]
-tags: c++ c++17 sttring_view
+tags: c++ c++17 string_view
 ---
 [출처](http://d.hatena.ne.jp/yohhoy/20180810/p1 )  
   
