@@ -58,11 +58,11 @@ tags: c++ 약어
 | EWG  | Evolution Working Group                   |
 | FDIS | Final Draft International Standard        |
 | IS   | International Standard                    |
-| LEWG | Library Evolution Working Group           |
-| LWG  | Library Working Group                     |
+| LEWG |   Library Evolution Working Group           |
+| LWG  |   Library Working Group                     |
 | NAD  | Not A Defect                              |
 | NB   | National Body                             |
-| PDTS | Preliminary Draft Technical Specification |
+| PDTS |   Preliminary Draft Technical Specification |
 | SG   | Study Group                               |
 | TC   | Technical Corrigendum                     |
 | TR   | Technical Report                          |
