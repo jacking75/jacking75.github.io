@@ -24,8 +24,8 @@ tags: c++ 약어
 | NVI    | Non-Virtual Interface                  |
 | ODR    | One Definition Rule                    |
 | OOTA   | Out-Of-Thin-Air                        |
-| POCCA  | propagate_on_container_copy_assignment |
-| POCMA  | propagate_on_container_move_assignment |
+| POCCA  |    propagate_on_container_copy_assignment |
+| POCMA  |   propagate_on_container_move_assignment |
 | POCS   | propagate_on_container_swap            |
 | POD    | Plain Old Data                         |
 | POD    | Point Of Definition                    |
@@ -41,10 +41,13 @@ tags: c++ 약어
 | TU     | Translation Unit                       |
 | UB     | Undefined Behavior                     |
 | UCN    | Universal Character Name               |
-| UDL    | User Defined Literal                   | 
+| UDL    | User Defined Literal                   |
+  
+  
   
   
 표준화 관련  
+  
 | 약어 | 의미                                      |
 |------|-------------------------------------------|
 | CD   | Committee Draft                           |
