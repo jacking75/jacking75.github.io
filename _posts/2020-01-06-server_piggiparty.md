@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [번역] PiggPARTY에서 실시간 통신 시스템
+title: 번역 - PiggPARTY에서 실시간 통신 시스템
 published: true
 categories: [사례]
 tags: 번역 게임서버 서버 사례
