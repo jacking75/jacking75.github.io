@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 번역 - Web서비스의 서버구성과목적
+title: 번역 - Web 서비스의 서버 구성과 목적
 published: true
 categories: [Network]
 tags: 번역 web network
