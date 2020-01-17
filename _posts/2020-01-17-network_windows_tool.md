@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 번역 - Network Testing: Taming the Beast
+title: 번역 - Network Testing Taming the Beast
 published: true
 categories: [Network]
 tags: 번역 tool network
