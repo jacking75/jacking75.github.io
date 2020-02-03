@@ -16,9 +16,7 @@ netstat -nap | grep :32452
   
   
 # tar.bz2, tar.gz 파일 압축 풀기 명령어
-  
-## tar.bz2 파일 압축 풀기
-  
+tar.bz2 파일 압축 풀기    
 ```  
 tar -xvf test.tar.bz2
 ```
