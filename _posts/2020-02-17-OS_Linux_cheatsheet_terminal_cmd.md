@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linux - 자주 사용하는 c 명령어
+title: Linux - 자주 사용하는 명령어
 published: true
 categories: [OS]
 tags: OS Linux terminal cmd
