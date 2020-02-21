@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Rust - VS Code의 Remote Container으로 Rust를 시작하자
+title: Rust - VS Code의 Remote Container로 Rust를 시작하기
 published: true
 categories: [Visual Studio]
 tags: rust vs visualstudio vscode
