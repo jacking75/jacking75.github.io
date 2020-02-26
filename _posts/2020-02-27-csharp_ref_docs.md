@@ -6,5 +6,5 @@ categories: [.NET]
 tags: c# .net docs
 ---
   
-<iframe src="https://docs.google.com/document/d/e/2PACX-1vQmjp8SI_t1ITOZon8OE5KHReSdkfYprZyOoOtjOy7c-8Y07LHWJsiYt_ajA9JWTWfoG5QQaeJTiWwP/pub?embedded=true"></iframe>
+<iframe width="1024" height="768" src="https://docs.google.com/document/d/e/2PACX-1vQmjp8SI_t1ITOZon8OE5KHReSdkfYprZyOoOtjOy7c-8Y07LHWJsiYt_ajA9JWTWfoG5QQaeJTiWwP/pub?embedded=true"></iframe>
    
