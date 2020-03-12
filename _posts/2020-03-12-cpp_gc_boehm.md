@@ -1,6 +1,6 @@
 ---
 layout: post
-title: C++ - GC(Boehm) 라이브러리 사용하기
+title: C++ - Boehm 알고리즘 GC라이브러리 사용하기
 published: true
 categories: [C++]
 tags: c++ gc boehm
