@@ -5,6 +5,16 @@ published: true
 categories: [ETC]
 tags: etc coding font source-code-pro d2codingfont FiraCode monoid sfmono
 ---
+## MonoLisa - 개발자를 위한 고정폭 폰트 (monolisa.dev)
+- https://monolisa.dev/  
+- 눈이 편하게 폭이 넓음
+- C와G, IL1, 0OØ 등에 확실한 차이를 둠
+- 읽기 편한 선의 흐름
+- 글자 흑백 공간의 조화
+- 전혀 느낌이 다른 이탤릭체
+- Ligatures 지원
+  
+  
 ## source-code-pro
 https://github.com/adobe-fonts/source-code-pro
   
