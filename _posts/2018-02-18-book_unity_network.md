@@ -3,7 +3,7 @@ layout: post
 title: 책 - Unity 네트워크 게임 개발 실전 입문 UNET/니프티 클라우드 mobile backend(일서)
 published: true
 categories: [Book]
-tags: book rust e-book
+tags: book e-book unity
 ---
 [Unityネットワークゲーム開発 実践入門 UNET/ニフティクラウド mobile backend版](https://www.amazon.co.jp/Unity%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B2%E3%83%BC%E3%83%A0%E9%96%8B%E7%99%BA-%E5%AE%9F%E8%B7%B5%E5%85%A5%E9%96%80-%E3%83%8B%E3%83%95%E3%83%86%E3%82%A3%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89-mobile-backend%E7%89%88/dp/4802610998)  
     
