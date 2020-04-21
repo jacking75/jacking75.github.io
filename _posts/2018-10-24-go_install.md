@@ -3,7 +3,7 @@ layout: post
 title: golang - 설치와 GoPath
 published: true
 categories: [Golang]
-tags: go golang install gopath
+tags: go golang install gopath Goenv
 ---
 아래 글은 golang을 공부할 목적으로 웹에서 본 글들을 정리한 것이다.  
   
@@ -19,6 +19,7 @@ tags: go golang install gopath
 - windows, linux, mac 모두 지원
 - [(일어)govirtualenv: Go 언어용 python virtualenv](https://qiita.com/necomeshi/items/ab14b1f615e5066475cc)
   
+<br>  
     
 ## goenv
 - goenv는 rbenv과 마찬가지로 golang 버전을 관리할 때 사용하는 것.
@@ -30,11 +31,18 @@ git clone https://github.com/wfarr/goenv.git ~/.goenv
 ```  
   
 - 패스 설정  
-
+Goenv 용 환경 변수와 실행 처리를 bash_profile에 추가하기  
 ```
-export GOENV_ROOT=$HOME/.goenv
-export PATH=$GOENV_ROOT/bin:$PATH
-eval "$(goenv init -)"
+echo 'export GOENV_ROOT="$HOME/.goenv"' >> ~/.bash_profile
+echo 'export PATH="$GOENV_ROOT/bin:$PATH"' >> ~/.bash_profile
+echo 'eval "$(goenv init -)"' >> ~/.bash_profile
+echo 'export PATH="$GOROOT/bin:$PATH"' >> ~/.bash_profile
+echo 'export GOPATH="$HOME/go"' >> ~/.bash_profile
+echo 'export PATH="$GOPATH/bin:$PATH"' >> ~/.bash_profile
+# 실행
+source ~/.bash_profile
+# 확인
+goenv --version
 ```
   
 - golang 설치  
@@ -45,15 +53,38 @@ goenv versions
 ```
   
 - rbenv과 마찬가지로 golang을 사용하도록 설정  
-
+  
 ```
 goenv global 1.4
 go version
 ```
   
+혹시 Go Module이 동작하지 않으면 아래 환경 설정을 참고한다  
+.bash_profile  
+```
+# Goenv 용 환경 설정
+export GOENV_DISABLE_GOPATH=1
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+# 실행
+eval "$(goenv init -)"
+
+# GOROOT은 goenv의 default
+export PATH="$GOROOT/bin:$PATH"
+# GOPATH은 자신이 원하는대로 설정한다
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
+
+# Go Modules 용 환경 설정
+export GO111MODULE=on  
+```  
+  
+  
 - 참고
     - [(일어)goenv로 gae/go와 보통의 go 환경을 바꾼다](http://qiita.com/sinmetal/items/71cfba4ae27cc2366572)  
-
+  
+<br>  
+  
 ## gobrew
 - [공식 사이트](https://github.com/cryptojuice/gobrew)
 - 설치  
@@ -62,7 +93,8 @@ go version
 curl -L https://raw.github.com/grobins2/gobrew/master/tools/install.sh | sh
 ```
   
-
+<br>  
+  
 ## GVM
 - ruby로 말하면 rbenv 같은 것  
     - https://github.com/moovweb/gvm  
@@ -119,6 +151,8 @@ gvm use go1.4.2
 - [(일어)GVM을 사용하여 복수 버전의 Go를 편리하게 교체하자](https://qiita.com/reoring/items/7344399ca6db99d2746f) 
 - [(일어)gvm을 이용하여 Revel 개발환경을 만들자](http://blog.mnrtks.jp/posts/2014/02/24/gvm-revel/)   
     
+  
+<br>  
       
 ## GoPath
 - $GOPATH는 원하는대로 지정할 수 있다
@@ -151,7 +185,8 @@ gvm use go1.4.2
  
 - Go는 GOPATH의 각 디렉토리에서 소스코드를 찾지만 다운로드한 파일은 보통 GOPATH  중에서 가장 최초의 디렉토리에 설치한다.
   
-
+<br>  
+  
 ### 복수의 GoPath 지정 
 - 가능하다. 단 첫번째 지정한 것 이외는 넘어가는 경우가 있다.
 - 예를들면 아래와 같이 GOPATH를 지정하였다.  
