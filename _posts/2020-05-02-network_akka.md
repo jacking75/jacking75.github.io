@@ -1,6 +1,6 @@
 ---
 layout: post
-title: akka 관련 링크 모음
+title: akka 관련 link 모음
 published: true
 categories: [Network]
 tags: network akka link
