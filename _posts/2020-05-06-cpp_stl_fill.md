@@ -1,6 +1,6 @@
 ---
 layout: post
-title: C++ - C++로 다차원 배열 초기화 방법. std::fill()의 편리한 사용법
+title: C++ - 다차원 배열 초기화 방법. std::fill()의 편리한 사용법
 published: true
 categories: [C++]
 tags: c++ stl fill array
