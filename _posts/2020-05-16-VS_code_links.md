@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Visual Code - 관련 link 모음
+title: Visual Studio Code - 관련 link 모음
 published: true
 categories: [Visual Studio]
 tags: vscode link

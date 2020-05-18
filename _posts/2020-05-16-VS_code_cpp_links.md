@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Visual Code - C++ 관련 link 모음
+title: Visual Studio Code - C++ 관련 link 모음
 published: true
 categories: [Visual Studio]
 tags: vscode link c++
