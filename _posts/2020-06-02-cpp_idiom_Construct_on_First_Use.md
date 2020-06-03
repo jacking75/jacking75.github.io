@@ -42,9 +42,11 @@ int main()
 {
     std::cout << "main" << std::endl;
 }
-'''  
+```  
+  
   
 이런 문제를 해결하기 위해 정적 오브젝트로의 접근을 함수로 통해서 하도록 한다.  
+  
 ```
 #include <iostream>
 class StaticObject
