@@ -5,7 +5,8 @@ published: true
 categories: [C++]
 tags: c++ idiom
 ---
-[원문](https://qiita.com/MoriokaReimen/items/c12cd791228254a95040)
+[원문](https://qiita.com/MoriokaReimen/items/c12cd791228254a95040)  
+  
 생성자에서 멤버 초기화 때 예외가 발생하는 경우가 있더. try와 catch로 예외를 잡을 수는 있지만 때로는 아래와 같이 어디에서 예외가 발생했는지 알 수 없을 때가 있다.    
     
 ```
