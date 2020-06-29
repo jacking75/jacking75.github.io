@@ -1,6 +1,6 @@
 ---
 layout: post
-title: C++ - 간단한 Object 메모리 폴링
+title: C++ - 간단한 Object 메모리 풀링
 published: true
 categories: [C++]
 tags: c++ memory pool
