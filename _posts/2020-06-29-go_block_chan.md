@@ -21,7 +21,7 @@ func sendData(data []byte) {
       }
       default: // ch1이 블럭킹 상태가 되면 default가 호출된다.
       {
-        //로그를 남김다
+        //여기가 호출되면 ch1 이 꽉 찬 상태이다.
       }
   }
 }
