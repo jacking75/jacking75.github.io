@@ -1,6 +1,6 @@
 ---
 layout: post
-title: C++ - Writing modern C++ code: how C++ has evolved over the years
+title: C++ - Writing modern C++ code. how C++ has evolved over the years
 published: true
 categories: [C++]
 tags: c++ 번역 c++11 modernC++
