@@ -1,6 +1,6 @@
 ---
 layout: post
-title: C++ - Aggregates(집성체)
+title: C++ - Aggregates 집성체
 published: true
 categories: [C++]
 tags: c++ aggregat
