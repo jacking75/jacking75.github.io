@@ -42,3 +42,34 @@ B bs[3];
 ```  
   
   
+## 주의점
+집성체 데이터 멤버가 비 집성체라도 괜찮다. 가시성 이외에 데이터 멤버 자체에 요구되는 컨셉은 아니다  
+데이터 멤버가 인라인 초기화를 가지고 있어도 괜찮다.  
+이상으로 어느 클래스가 집성체를 만족할 때 TriviallyCopyable 나 TriviallyDefaultConstructible 가 아니고, StandardLayout 라는 법도 없다.  
+```
+#include <type_traits>
+
+struct X {
+    virtual void f() {}
+};
+
+struct aggregate {
+    X x;
+    int i;
+};
+
+int main()
+{
+    aggregate agg = {{}, 42};
+    
+    static_assert(!std::is_trivially_copy_constructible<aggregate>{}, "");
+    static_assert(!std::is_trivially_default_constructible<aggregate>{}, "");
+    static_assert(!std::is_standard_layout<aggregate>{}, "");
+}
+```  
+  
+  
+## 특징
+집성체는 C 언어의 구조체와 같은 초기화를 할 수 있다는 특징이 있다.  
+  
+ 
