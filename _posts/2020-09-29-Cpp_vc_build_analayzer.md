@@ -1,6 +1,6 @@
 ---
 layout: post
-title: C++ - Windows Performance Analayzer로 C++ 빌드 시간의 프로파일링 해 보자!
+title: C++ - Windows Performance Analayzer로 C++ 빌드 시간을 프로파일링 해 보자!
 published: true
 categories: [C++]
 tags: c++ Analayzer vc vc++ build
