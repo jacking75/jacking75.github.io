@@ -1,6 +1,6 @@
 ---
 layout: post
-title: procs: 새로운 프로세스 표시 검색 툴 소개
+title: procs - 새로운 프로세스 표시 검색 툴 소개
 published: true
 categories: [OS]
 tags: os linux procs tool
