@@ -5,5 +5,5 @@ published: true
 categories: [Log]
 tags: log tool TextAnalysisTool
 ---
-<iframe src="https://docs.google.com/document/d/e/2PACX-1vSKXCm7uKa3e0S5MmHTAi9QN3ejig1MBu47XkD-lYwvOZiATvKxxipTJRbG4hw6e1RI-79oBaQNmIjE/pub?embedded=true"></iframe>  
+<iframe width="800" height="900" src="https://docs.google.com/document/d/e/2PACX-1vSKXCm7uKa3e0S5MmHTAi9QN3ejig1MBu47XkD-lYwvOZiATvKxxipTJRbG4hw6e1RI-79oBaQNmIjE/pub?embedded=true"></iframe>  
     
