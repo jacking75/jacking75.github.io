@@ -14,19 +14,22 @@ https://docs.microsoft.com/ko-kr/dotnet/core/additional-tools/uninstall-tool?tab
 dotnet-core-uninstall list
 ```    
   
+<br>  
   
 아래 명령어로 삭제할 수 있는 버전을 본다  
 ```
 dotnet-core-uninstall dry-run --all --sdk 
 ```  
   
+<br>    
   
 아래 명령어로 삭제한다  
 ```
 dotnet-core-uninstall remove --all --sdk
 ```  
     
-	
+<br>  
+  	
 **삭제 시에는 관리자 권한이 필요하다**  
 
   
