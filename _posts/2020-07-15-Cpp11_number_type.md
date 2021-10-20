@@ -12,7 +12,14 @@ C++11에서 새로 추가됨
 int8_t, int16_t, int32_t, int64_t, uint8_t, uint16_t, uint32_t, uint64_t, int_fast8_t, int_fast16_t, int_fast32_t, int_fast64_t, uint_fast8_t, uint_fast16_t, uint_fast32_t, uint_fast64_t, int_least8_t, int_least16_t, int_least32_t, int_least64_t, uint_least8_t, uint_least16_t, uint_least32_t, uint_least64_t, intmax_t, uintmax_t, intptr_t, uintptr_t
 ```
   
-  
+아래 헤더 파일을 추가해야 한다  
+```
+#include <cstdint>
+
+std::int8_t
+```  
+    
+	
 ## [u]intX_t
 int32_t 나 가장 많이 사용되지만 무려 optional 이므로 처리 시스템에 의해서는 미  구현일 수도 있으므로 이 경우는 아래의
 `[u]int_fastX_t` 나 `[u]int_leastX_t` 를 쓰게 된다.  
