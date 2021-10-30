@@ -5,6 +5,12 @@ published: true
 categories: [ETC]
 tags: etc coding font source-code-pro d2codingfont FiraCode monoid sfmono
 ---
+[CodingFont - 자신에게 맞는 코딩 폰트를 찾는 게임](https://news.hada.io/topic?id=5273  )  
+  
+<br>      
+	
+	
+	
 ## MonoLisa - 개발자를 위한 고정폭 폰트 (monolisa.dev)
 - https://monolisa.dev/  
 - 눈이 편하게 폭이 넓음
