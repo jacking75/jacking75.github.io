@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 
-published: Windows11 - Dev Drive 사용하기
+title: Windows11 - Dev Drive 사용하기
+published: true
 categories: [OS]
 tags: os windows DevDrive dev
 ---
